@@ -1,38 +1,260 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*:focus{
+  outline: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+:root{
+  --violeta: rgb(97, 74, 217);
+  --violeta-claro: rgba(97, 74, 217, 0.2)
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flex-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.header-container{
+  padding-top: 10px;
+  background-color: #fff;
+}
+
+.header{
+  width: 90%;
+  height: 40px;
+  justify-content: space-between;
+}
+
+.search-icon{
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  padding: 5px;
+  background-color: #ececec
+}
+
+.saldo{
+  color: var(--violeta);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.user-img{
+  background-color: var(--violeta-claro);
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  padding: 5px;
+  font-size: 10px;
+  color: var(--violeta);
+  border: 1.5px solid var(--violeta);
+}
+
+.navbar-top-container{
+  margin-top: 30px;
+}
+
+.navbar-top{
+  list-style: none;
+  width: 70%;
+  justify-content: space-around;
+}
+
+.navbar-top li{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.icon-navtop{
+  width: 50px;
+  height: 50px;
+  font-size: 35px;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: var(--violeta);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.icon-navtop img{
+  width: 25px;
+  height: 25px;
+}
+
+.prestamos-icon{
+  background-color: var(--violeta-claro);
+  color: var(--violeta);
+}
+
+.depositar-icon{
+  background-color: rgba(255, 187, 0, 0.2);
+  color: rgb(255, 187, 0);
+}
+
+.inversiones-icon{
+  background-color: rgb(220, 255, 232);
+  color: rgb(22, 224, 130);
+}
+
+.navbar-top h3{
+  font-weight: normal;
+  font-size: 15px;
+  color: #999;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.navbar-bottom-container{
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 10;
+  width: 100%;
+  height: 40px;
+  padding: 15px 0 10px 0;
+  font-size: 14px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+.navbar-bottom{
+  list-style: none;
+  width: 90%;
+  justify-content: space-between;
+  color: #bbb;
+}
+
+.navbar-bottom li{
+  flex-direction: column;
+}
+
+.bottom-icons{
+  width: 25px;
+  height: 25px;
+  margin-bottom: 3px;
+  opacity: 0.2;
+}
+
+.page-active{
+  color: var(--violeta);
+}
+
+.page-active img{
+  opacity: 1
+}
+
+.movimiento-container{
+  width: 100%;
+  flex-direction: column;
+  margin-top: 25px
+}
+
+.movimiento{
+  width: 90%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.movimiento-img{
+  width: 20px;
+  height: 20px;
+  padding: 7px;
+  background-color: var(--violeta-claro);
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.movimiento-nombre{
+  color: #666;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1
+}
+
+.movimiento-date{
+  color: #999;
+  font-size: 12px;
+}
+
+.movimiento-saldo{
+  font-size: 23px;
+  font-weight: 600;
+  padding: 3px 8px;
+  color: #444;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.entrada-saldo{
+  background-color: rgb(220, 255, 232);
+  color: rgb(22, 224, 130);
+  border-radius: 5px;
+}
+
+.deposito-container,
+.retiro-container{
+  position: fixed;
+  top: 0;
+  z-index: 20;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--violeta);
+  color: #fff;
+  flex-direction: column;
+  display: none;
+}
+
+.retiro-container{
+  background-color: rgb(22, 224, 130);
+}
+
+.form-deposito{
+  max-width: 90%;
+  flex-direction: column;
+}
+
+.input-deposito{
+  font-size: 80px;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  text-align: center;
+}
+
+.input-deposito::placeholder{
+  color: #fff;
+}
+
+/* .input-error{
+  color: red;
+  font-weight: bold;
+} */
+
+.btn{
+  border: none;
+  padding: 12px;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 17px;
+  font-weight: bold;
+  border: 2px solid transparent;
+}
+
+.btn-cancel{
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff
+}
+
+.btn-confirm{
+  background-color: #fff;
+  color: var(--violeta);
 }

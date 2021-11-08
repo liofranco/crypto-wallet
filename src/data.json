@@ -1,0 +1,324 @@
+[
+    {
+        "name" : "SUBE",
+        "id" : "sube",
+        "category" : "Recargas",
+        "image" : "",
+        "populares" : true
+    },
+    {
+        "name" : "Visa",
+        "id" : "Visa",
+        "category" : "Tarjetas",
+        "image" : "",
+        "populares" : true
+    },
+    {
+        "name" : "Fundación Favaloro",
+        "id" : "favaloro",
+        "category" : "Donaciones",
+        "image" : "",
+        "populares" : true
+    },
+    {
+        "name" : "MasterCard",
+        "id" : "mastercard",
+        "category" : "Tarjetas",
+        "image" : "",
+        "populares" : true
+    },
+    {
+        "name" : "FiberTel",
+        "id" : "fibertel",
+        "category" : "internet",
+        "image" : "",
+        "populares" : true
+    },
+    {
+        "name" : "Directv Prepago",
+        "id" : "directv-prepago",
+        "category" : "Recargas",
+        "image" : "",
+        "populares" : true
+    },
+    {
+        "name" : "Movistar",
+        "id" : "movistar-recarga",
+        "category" : "recarga-celulares",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "Personal",
+        "id" : "personal-recarga",
+        "category" : "recarga-celulares",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "Claro",
+        "id" : "claro-recarga",
+        "category" : "recarga-celulares",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "Tuenti",
+        "id" : "tuenti-recarga",
+        "category" : "recarga-celulares",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "VEP",
+        "id" : "vep",
+        "category" : "servicios-afip",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "Monotributo Físicas",
+        "id" : "monotributo-f",
+        "category" : "servcios-afip",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "Anticipo Ganancias",
+        "id" : "anticipo-ganancias",
+        "category" : "servicios-afip",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "Anticipo Bs Personales",
+        "id" : "anticipo-bs-ps",
+        "category" : "servicios-afip",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "Monotributo Jurídicas",
+        "id" : "monotributo-j",
+        "category" : "servicios-afip",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "Edenor",
+        "id" : "edenor",
+        "category" : "electricidad",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "EDESUR",
+        "id" : "edesur",
+        "category" : "electricidad",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "EPE Energía de Sta Fe",
+        "id" : "epe-stafe",
+        "category" : "electricidad",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "EPEC",
+        "id" : "epec",
+        "category" : "electricidad",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "EDEA",
+        "id" : "edea",
+        "category" : "electricidad",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "EDEMSA",
+        "id" : "edemsa",
+        "category" : "electricidad",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "Edelap",
+        "id" : "edelap",
+        "category" : "electricidad",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "EDEN",
+        "id" : "eden",
+        "category" : "electricidad",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "EDERSA Rio Negro",
+        "id" : "edersa",
+        "category" : "electricidad",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "EDET",
+        "id" : "edet",
+        "category" : "electricidad",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "EDESAL",
+        "id" : "edesal",
+        "category" : "electricidad",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "EDESA",
+        "id" : "edesa",
+        "category" : "electricidad",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "EMSA",
+        "id" : "emsa",
+        "category" : "electricidad",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "ENERSA",
+        "id" : "enersa",
+        "category" : "electricidad",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "Personal",
+        "id" : "personal",
+        "category" : "telefonia",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "Movistar",
+        "id" : "movistar",
+        "category" : "telefonia",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "Claro",
+        "id" : "claro",
+        "category" : "telefonia",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "Iplan networks",
+        "id" : "iplan",
+        "category" : "telefonia",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "Telecom",
+        "id" : "telecom",
+        "category" : "telefonia",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "Telecom Datos",
+        "id" : "telecom-datos",
+        "category" : "telefonia",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "AySA",
+        "id" : "aysa",
+        "category" : "agua",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "Aguas Cordobesas",
+        "id" : "aguas-cordobesas",
+        "category" : "agua",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "ABSA",
+        "id" : "absa",
+        "category" : "agua",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "Aguas Santafesinas",
+        "id" : "aguas-stafe",
+        "category" : "agua",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "Aguas Rionegrinas",
+        "id" : "aguas-rionegrinas",
+        "category" : "agua",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "",
+        "id" : "",
+        "category" : "",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "",
+        "id" : "",
+        "category" : "",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "",
+        "id" : "",
+        "category" : "",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "",
+        "id" : "",
+        "category" : "",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "",
+        "id" : "",
+        "category" : "",
+        "image" : "",
+        "populares" : false
+    },
+    {
+        "name" : "",
+        "id" : "",
+        "category" : "",
+        "image" : "",
+        "populares" : false
+    }
+]
