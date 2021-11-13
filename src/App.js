@@ -17,6 +17,7 @@ function App() {
   const [retiroStyle, setRetiroStyle] = useState({})
   const [transferenciaStyle, setTransferenciaStyle] = useState({})
   const [movimientosArray, setMovimientosArray] = useState([])
+  const [userTransfer, setUserTransfer] = useState('')
 
 
   return (
@@ -53,10 +54,18 @@ function App() {
           setMovimientosArray={setMovimientosArray}
           movimientosArray={movimientosArray}
         />
-        {/* <Transferencia
+        <Transferencia
+          saldo={saldo}
+          setSaldo={setSaldo}
+          retiro={retiro}
+          setRetiro={setRetiro}
+          userTransfer={userTransfer}
+          setUserTransfer={setUserTransfer}
           transferenciaStyle={transferenciaStyle}
           setTransferenciaStyle={setTransferenciaStyle}
-        /> */}
+          setMovimientosArray={setMovimientosArray}
+          movimientosArray={movimientosArray}
+        />
       </>
   );
 }

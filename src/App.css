@@ -13,6 +13,10 @@
   --violeta-claro: rgba(97, 74, 217, 0.2)
 }
 
+#root{
+  overflow-x: hidden;
+}
+
 .flex-center{
   display: flex;
   align-items: center;
@@ -257,4 +261,9 @@
 .btn-confirm{
   background-color: #fff;
   color: var(--violeta);
+}
+
+.transferencia-container{
+  flex-direction: column;
+  background-color: yellowgreen;
 }

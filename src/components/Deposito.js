@@ -42,6 +42,7 @@ const Deposito = ({setDeposito, deposito, depositoStyle, setDepositoStyle, setSa
         setDepositoStyle({
             display: 'none'
         })
+        console.log('cancelar')
     }
 
 
@@ -54,8 +55,8 @@ const Deposito = ({setDeposito, deposito, depositoStyle, setDepositoStyle, setSa
                     <input value={`${deposito}`} type="number" name="deposit" id="deposit" placeholder="$0" className="input-deposito" onChange={handleDeposito} />
                 </div>
                 <div>
-                    <button className="btn btn-cancel" onClick={cancelarDeposito}>Cancelar</button>
-                    <input className="btn btn-confirm" type="submit" value="Confirmar" />
+                    <div className="btn btn-cancel" onClick={cancelarDeposito}>Cancelar</div>
+                    <button className="btn btn-confirm" type="submit">Confirmar</button>
                 </div>
             </form>
         </div>

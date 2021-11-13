@@ -7,7 +7,6 @@ const Retiro = ({setRetiro, retiro, retiroStyle, setRetiroStyle, setSaldo, saldo
 
     const handleRetiro = e => { 
         setRetiro(parseInt(e.target.value))
-        console.log(retiroError)
         if(e.target.value > saldo){
             setRetiroError(true)
             seInputError('input-error')
@@ -75,11 +74,11 @@ const Retiro = ({setRetiro, retiro, retiroStyle, setRetiroStyle, setSaldo, saldo
 
             <form action="" className="form-deposito flex-center" onSubmit={handleRetiroSubmit}>
                 <div className="input-container flex-center">
-                    <input value={retiro} type="number" name="deposit" id="deposit" placeholder="0" className={`input-deposito ${inputError}`} onChange={handleRetiro} />
+                    <input autoFocus value={retiro} type="number" name="deposit" id="deposit" placeholder="0" className={`input-deposito ${inputError}`} onChange={handleRetiro} />
                 </div>
                 <SaldoError />
                 <div>
-                    <button className="btn btn-cancel" onClick={cancelarRetiro}>Cancelar</button>
+                    <div className="btn btn-cancel" onClick={cancelarRetiro}>Cancelar</div>
                     <input className="btn btn-confirm" type="submit" value="Confirmar" />
                 </div>
             </form>
