@@ -4,12 +4,15 @@ import Movimiento from './Movimiento';
 const Movimientos = ({setMovimientosArray, movimientosArray}) => {
 
     return (
-        <div className="flex-center movimiento-container">
+        <div className="flex-center movimientos-section">
+            <h3>Movimientos</h3>
+            <div className="movimientos-container flex-center">
             {movimientosArray.map( (movimiento, i) => {
                 return (
                     <Movimiento movimiento={movimiento} key={i}/>
                 )
             })}
+            </div>
         </div>
     );
 };

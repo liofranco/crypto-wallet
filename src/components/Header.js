@@ -4,8 +4,8 @@ const Header = ({saldo}) => {
     return (
         <div className="header-container flex-center">
             <div className="flex-center header">
-                <div className="search-icon">
-                    
+                <div className="">
+                    CW
                 </div>
                 <div className="saldo">
                     ${saldo}

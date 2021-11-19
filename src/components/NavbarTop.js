@@ -8,12 +8,6 @@ const NavbarTop = ({setDepositoStyle, setRetiroStyle}) => {
         })
     }
 
-    const clickEnviar = () => {
-        setDepositoStyle({
-            display: 'flex'
-        })
-    }
-
     const clickRetiro = () => {
         setRetiroStyle({
             display: 'flex'
@@ -23,25 +17,39 @@ const NavbarTop = ({setDepositoStyle, setRetiroStyle}) => {
     return (
         <nav className="flex-center navbar-top-container">
             <ul className="flex-center navbar-top">
-                <li onClick={clickEnviar}>
-                    <div className="prestamos-icon icon-navtop flex-center">
-                        <img src="https://icongr.am/material/swap-horizontal.svg?size=128&color=614ad9" alt=""/>
+                <li>
+                    <div className="icon-navtop flex-center">
+                        <img src="https://icongr.am/clarity/plus.svg?size=148&color=614ad9" alt=""/>
                     </div>
-                    <h3>Transferir</h3>
+                    <h3>Comprar</h3>
+                    
+                </li>
+                <li>
+                    <div className="icon-navtop flex-center">
+                        <img src="https://icongr.am/clarity/minus.svg?size=148&color=614ad9" alt=""/>
+                    </div>
+                    <h3>Vender</h3>
                     
                 </li>
                 <li onClick={clickDeposito}>
-                    <div className="prestamos-icon icon-navtop flex-center">
+                    <div className="icon-navtop flex-center">
                         <img src="https://icongr.am/material/arrow-down.svg?size=128&color=614ad9" alt=""/>
                     </div>
                     <h3>Depositar</h3>
                     
                 </li>
                 <li onClick={clickRetiro}>
-                    <div className="prestamos-icon icon-navtop flex-center">
+                    <div className="icon-navtop flex-center">
                         <img src="https://icongr.am/material/arrow-up.svg?size=128&color=614ad9" alt=""/>
                     </div>
                     <h3>Retirar</h3>                    
+                </li>
+                <li>
+                    <div className="icon-navtop flex-center">
+                        <img src="https://icongr.am/clarity/switch.svg?size=148&color=614ad9" alt=""/>
+                    </div>
+                    <h3>Convertir</h3>
+                    
                 </li>
             </ul>
         </nav>

@@ -6,7 +6,7 @@ import NavbarBottom from './components/NavbarBottom';
 import Deposito from './components/Deposito';
 import { useState } from 'react';
 import Retiro from './components/Retiro';
-import Transferencia from './components/Transferencia';
+import Saldos from './components/Saldos';
 
 function App() {
 
@@ -15,9 +15,7 @@ function App() {
   const [saldo, setSaldo] = useState(0)
   const [depositoStyle, setDepositoStyle] = useState({})
   const [retiroStyle, setRetiroStyle] = useState({})
-  const [transferenciaStyle, setTransferenciaStyle] = useState({})
   const [movimientosArray, setMovimientosArray] = useState([])
-  const [userTransfer, setUserTransfer] = useState('')
 
 
   return (
@@ -29,6 +27,7 @@ function App() {
           setDepositoStyle={setDepositoStyle}
           setRetiroStyle={setRetiroStyle}
         />
+        <Saldos />
         <Movimientos
           movimientosArray={movimientosArray}
           setMovimientosArray={setMovimientosArray}
@@ -51,18 +50,6 @@ function App() {
           retiroStyle={retiroStyle}
           setSaldo={setSaldo}
           saldo={saldo}
-          setMovimientosArray={setMovimientosArray}
-          movimientosArray={movimientosArray}
-        />
-        <Transferencia
-          saldo={saldo}
-          setSaldo={setSaldo}
-          retiro={retiro}
-          setRetiro={setRetiro}
-          userTransfer={userTransfer}
-          setUserTransfer={setUserTransfer}
-          transferenciaStyle={transferenciaStyle}
-          setTransferenciaStyle={setTransferenciaStyle}
           setMovimientosArray={setMovimientosArray}
           movimientosArray={movimientosArray}
         />
