@@ -1,7 +1,7 @@
 import React from 'react';
 import Movimiento from './Movimiento';
 
-const Movimientos = ({setMovimientosArray, movimientosArray}) => {
+const Movimientos = ({movimientosArray}) => {
 
     return (
         <div className="flex-center movimientos-section">

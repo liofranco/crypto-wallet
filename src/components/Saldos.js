@@ -1,32 +1,35 @@
 import React from 'react';
 
-const Saldos = () => {
+const Saldos = ({saldo}) => {
+
+    const {ars, btc, eth, dai, usdt} = saldo
+
     return (
         <div className="flex-center saldos-container">
             <div className="saldo-container">
                 <img src="https://icongr.am/fontawesome/dollar.svg?size=148&color=currentColor" alt="" className="coin-img" />
                 <h3>Pesos</h3>
-                <p>0,00 AR$</p>
+                <p>{ars} ARS</p>
             </div>
             <div className="saldo-container">
                 <img src="img/btc.png" alt="" className="coin-img"/>
                 <h3>Bitcoin</h3>
-                <p>0,00 BTC</p>
+                <p>{btc} BTC</p>
             </div>
             <div className="saldo-container">
                 <img src="img/eth.png" alt="" className="coin-img"/>
                 <h3>Ethereum</h3>
-                <p>0,00 ETH</p>
+                <p>{eth} ETH</p>
             </div>
             <div className="saldo-container">
                 <img src="img/dai.png" alt="" className="coin-img"/>
                 <h3>DAI</h3>
-                <p>0,00 DAI</p>
+                <p>{dai} DAI</p>
             </div>
             <div className="saldo-container">
-                <img src="img/bnb.png" alt="" className="coin-img"/>
-                <h3>Binance Coin</h3>
-                <p>0,00 BNB</p>
+                <img src="img/usdt.png" alt="" className="coin-img"/>
+                <h3>Tether</h3>
+                <p>{usdt} USDT</p>
             </div>
         </div>
     );

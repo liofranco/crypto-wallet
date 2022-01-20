@@ -1,58 +1,45 @@
 import './App.css';
-import Movimientos from './components/Movimientos';
-import Header from './components/Header';
-import NavbarTop from './components/NavbarTop';
 import NavbarBottom from './components/NavbarBottom';
-import Deposito from './components/Deposito';
-import { useState } from 'react';
-import Retiro from './components/Retiro';
-import Saldos from './components/Saldos';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Comprar from './pages/Comprar';
+import Deposito from './pages/Deposito';
+import Home from './pages/Home';
+import Retiro from './pages/Retiro';
+import Vender from './pages/Vender';
+import DepositoMoneda from './components/DepositoMoneda';
+import RetiroMoneda from './components/RetiroMoneda';
 
 function App() {
 
-  const [deposito, setDeposito] = useState('')
-  const [retiro, setRetiro] = useState('')
-  const [saldo, setSaldo] = useState(0)
-  const [depositoStyle, setDepositoStyle] = useState({})
-  const [retiroStyle, setRetiroStyle] = useState({})
-  const [movimientosArray, setMovimientosArray] = useState([])
+  const [saldo, setSaldo] = useState({
+    ars: 0,
+    btc: 0,
+    eth: 0,
+    dai: 0,
+    usdt:0
+  })
 
+  const [movimientosArray, setMovimientosArray] = useState([])
 
   return (
       <>
-        <Header
-          saldo={saldo}
-        />
-        <NavbarTop
-          setDepositoStyle={setDepositoStyle}
-          setRetiroStyle={setRetiroStyle}
-        />
-        <Saldos />
-        <Movimientos
-          movimientosArray={movimientosArray}
-          setMovimientosArray={setMovimientosArray}
-        />
-        {/* <NavbarBottom /> */}
-        <Deposito
-          deposito={deposito}
-          setDeposito={setDeposito}
-          setDepositoStyle={setDepositoStyle}
-          depositoStyle={depositoStyle}
-          setSaldo={setSaldo}
-          saldo={saldo}
-          setMovimientosArray={setMovimientosArray}
-          movimientosArray={movimientosArray}
-        />
-        <Retiro
-          retiro={retiro}
-          setRetiro={setRetiro}
-          setRetiroStyle={setRetiroStyle}
-          retiroStyle={retiroStyle}
-          setSaldo={setSaldo}
-          saldo={saldo}
-          setMovimientosArray={setMovimientosArray}
-          movimientosArray={movimientosArray}
-        />
+        <Router>
+          <Routes>
+            <Route exact path="/" element={<Home saldo={saldo} movimientosArray={movimientosArray} />} />
+            <Route exact path="/comprar" element={<Comprar />} />
+            <Route exact path="/vender" element={<Vender />} />
+            <Route exact path="/deposito" element={<Deposito saldo={saldo} />} /> 
+            <Route exact path="/deposito/:currency" element={
+              <DepositoMoneda 
+                saldo={saldo}
+                setSaldo={setSaldo} 
+                setMovimientosArray={setMovimientosArray}
+                movimientosArray={movimientosArray} />} /> 
+            <Route exact path="/retiro/:currency" element={<RetiroMoneda saldo={saldo}  setSaldo={setSaldo} />} />            
+            <Route exact path="/retiro" element={<Retiro saldo={saldo} />} />
+          </Routes>
+        </Router>
       </>
   );
 }
