@@ -5,15 +5,15 @@ const Header = ({saldoTotal}) => {
     return (
         <div className="header-container flex-center">
             <div className="flex-center header">
-                <div className="">
+                {/* <div className="">
                     CW
-                </div>
+                </div> */}
                 <div className="saldo">
                     ${saldoTotal}
                 </div>
-                <div className="user-img flex-center">
+                {/* <div className="user-img flex-center">
                     LF
-                </div>
+                </div> */}
             </div>
         </div>
     );
