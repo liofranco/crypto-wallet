@@ -1,5 +1,4 @@
 import './App.css';
-import NavbarBottom from './components/NavbarBottom';
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Deposito from './pages/Deposito';
@@ -75,6 +74,7 @@ function App() {
       console.log('cambio saldo')
       setSaldoUpdate(false)
     }
+    // eslint-disable-next-line
   }, [saldoUpdate])
 
   return (

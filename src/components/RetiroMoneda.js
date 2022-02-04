@@ -10,7 +10,7 @@ const RetiroMoneda = ({saldo, setSaldo, movimientosArray, setMovimientosArray, s
 
     let monedaRetiro = saldo.filter( curr => curr.id === currencyId)
 
-    const { balance, symbol } = monedaRetiro[0]
+    const { balance } = monedaRetiro[0]
 
     const handleRetiro = e => {
         setRetiro(parseFloat(e.target.value))
