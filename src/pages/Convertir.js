@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useState } from 'react/cjs/react.development';
 
 const Convertir = ({saldo, setSaldo, setSaldoUpdate, movimientosArray, setMovimientosArray}) => {
 
