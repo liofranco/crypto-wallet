@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Header from '../components/Header';
 import Movimientos from '../components/Movimientos';
 import NavbarTop from '../components/NavbarTop';
 import Saldos from '../components/Saldos';
 
-const Home = ({saldo, movimientosArray}) => {
+const Home = ({saldo, movimientosArray, saldoTotal}) => {
 
     return (
         <>
-            <Header />
+            <Header saldoTotal={saldoTotal} />
             <NavbarTop />
             <Saldos saldo={saldo} />
             <Movimientos 

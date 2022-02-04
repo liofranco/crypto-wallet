@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Header = () => {
+const Header = ({saldoTotal}) => {
+
     return (
         <div className="header-container flex-center">
             <div className="flex-center header">
@@ -8,7 +9,7 @@ const Header = () => {
                     CW
                 </div>
                 <div className="saldo">
-                    $0
+                    ${saldoTotal}
                 </div>
                 <div className="user-img flex-center">
                     LF

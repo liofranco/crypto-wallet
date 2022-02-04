@@ -6,26 +6,17 @@ const NavbarTop = () => {
     return (
         <nav className="flex-center navbar-top-container">
             <ul className="flex-center navbar-top">
-                <Link to="/comprar" className="link-navbar-top">
-                    <div className="icon-navtop flex-center">
-                        <img src="https://icongr.am/clarity/plus.svg?size=148&color=614ad9" alt=""/>
-                    </div>
-                    <h3>Comprar</h3>
-                    
-                </Link>
-                <Link to="/vender" className="link-navbar-top">
-                    <div className="icon-navtop flex-center">
-                        <img src="https://icongr.am/clarity/minus.svg?size=148&color=614ad9" alt=""/>
-                    </div>
-                    <h3>Vender</h3>
-                    
-                </Link>
                 <Link to="/deposito" className="link-navbar-top">
                     <div className="icon-navtop flex-center">
                         <img src="https://icongr.am/material/arrow-down.svg?size=128&color=614ad9" alt=""/>
                     </div>
-                    <h3>Depositar</h3>
-                    
+                    <h3>Depositar</h3>                    
+                </Link>
+                <Link to="/convertir" className="link-navbar-top">
+                    <div className="icon-navtop flex-center">
+                        <img src="https://icongr.am/material/swap-horizontal.svg?size=128&color=614ad9" alt=""/>
+                    </div>
+                    <h3>Cambiar</h3>    
                 </Link>
                 <Link to="/retiro" className="link-navbar-top">
                     <div className="icon-navtop flex-center">
