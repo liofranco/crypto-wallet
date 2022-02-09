@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Convertir = ({saldo, setSaldo, setSaldoUpdate, movimientosArray, setMovimientosArray}) => {
+const Convertir = 
+    ({saldo, 
+    setSaldo, 
+    setSaldoUpdate, 
+    movimientosArray, 
+    setMovimientosArray,
+    cotizaciones}) => {
 
     const [swap1, setSwap1] = useState('ars')
     const [swap2, setSwap2] = useState('btc')
@@ -12,7 +18,8 @@ const Convertir = ({saldo, setSaldo, setSaldoUpdate, movimientosArray, setMovimi
     let array1 = saldo.filter( curr => curr.id !== swap2)
     let array2 = saldo.filter( curr => curr.id !== swap1)
     let currency1 = saldo.filter( curr => curr.id === swap1)
-    let currency2 = saldo.filter( curr => curr.id === swap2)
+    let cotizacion1 = cotizaciones.filter( curr => curr.id === swap1)
+    let cotizacion2 = cotizaciones.filter( curr => curr.id === swap2) 
 
     const handleSwap1 = e => {
         setSwap1(e.target.value)
@@ -31,8 +38,8 @@ const Convertir = ({saldo, setSaldo, setSaldoUpdate, movimientosArray, setMovimi
 
     const maxSwap = () => {
         let input1 = currency1[0].balance
-        setBalanceSwap1(input1)
-        setBalanceSwap2(parseFloat(((input1*currency1[0].price)/currency2[0].price).toFixed(8)))
+        setBalanceSwap1(parseFloat(input1))
+        setBalanceSwap2(parseFloat(((input1*cotizacion1[0].bid)/cotizacion2[0].ask).toFixed(8)))
     }
 
     const submitSwap = e => {
@@ -45,7 +52,7 @@ const Convertir = ({saldo, setSaldo, setSaldoUpdate, movimientosArray, setMovimi
                     curr.balance += parseFloat(balanceSwap2)
                     movimientosArray.unshift({
                         nombre: `Cambio ${swap1.toUpperCase()}→${swap2.toUpperCase()}`,
-                        saldo: `+${balanceSwap2} ${swap2.toUpperCase()}`,
+                        saldo: `+${balanceSwap2.toFixed(curr.decimals)} ${swap2.toUpperCase()}`,
                         img: "https://icongr.am/material/swap-horizontal.svg?size=128&color=614ad9",
                         style: "entrada-saldo"
                     })
@@ -63,8 +70,8 @@ const Convertir = ({saldo, setSaldo, setSaldoUpdate, movimientosArray, setMovimi
     const handleChangeSwap1 = e => {
         let input1 = e.target.value
         if(input1 > 0){
-            setBalanceSwap1(input1)
-            setBalanceSwap2(parseFloat(((input1*currency1[0].price)/currency2[0].price).toFixed(8)))
+            setBalanceSwap1(parseFloat(input1))
+            setBalanceSwap2(parseFloat(((input1*cotizacion1[0].bid)/cotizacion2[0].ask).toFixed(8)))
         } else {
             setBalanceSwap1('')
             setBalanceSwap2('')
@@ -74,8 +81,8 @@ const Convertir = ({saldo, setSaldo, setSaldoUpdate, movimientosArray, setMovimi
     const handleChangeSwap2 = e => {
         let input2 = e.target.value
         if(input2 > 0){
-            setBalanceSwap2(input2)
-            setBalanceSwap1(parseFloat(((input2*currency2[0].price)/currency1[0].price).toFixed(8)))
+            setBalanceSwap2(parseFloat(input2))
+            setBalanceSwap1(parseFloat(((input2*cotizacion2[0].ask)/cotizacion1[0].bid).toFixed(8)))
         } else {
             setBalanceSwap1('')
             setBalanceSwap2('')

@@ -10,13 +10,14 @@ import RetiroMoneda from './components/RetiroMoneda';
 
 function App() {
 
+  const [cotizaciones, setCotizaciones] = useState([])
   const [saldo, setSaldo] = useState([
     {
       currency: 'ARS',
       id: 'ars',
       name: 'Pesos',
       balance: 0,
-      price: 1,
+      decimals: 2,
       symbol: '$',
       img: 'https://icongr.am/fontawesome/dollar.svg?size=148&color=currentColor'
     },
@@ -25,7 +26,7 @@ function App() {
       id: 'btc',
       name: 'Bitcoin',
       balance: 0,
-      price: 8061300,
+      decimals: 8,
       symbol: 'BTC',
       img: 'img/btc.png'
     },
@@ -34,7 +35,7 @@ function App() {
       id: 'eth',
       name: 'Ethereum',
       balance: 0,
-      price: 564100,
+      decimals: 6,
       symbol: 'ETH',
       img: 'img/eth.png'
     },
@@ -43,7 +44,7 @@ function App() {
       id: 'dai',
       name: 'DAI',
       balance: 0,
-      price: 220,
+      decimals: 2,
       symbol: 'DAI',
       img: 'img/dai.png'
     },
@@ -52,7 +53,7 @@ function App() {
       id: 'usdt',
       name: 'Tether',
       balance: 0,
-      price: 220,
+      decimals: 2,
       symbol: 'USDT',
       img: 'img/usdt.png'
     }
@@ -67,53 +68,109 @@ function App() {
     if(saldoUpdate){
       let saldoParcial = 0
       saldo.forEach( curr => {
-          saldoParcial += (curr.balance*curr.price)
+          let cotizacion = cotizaciones.filter( cot => cot.id === curr.id)
+          saldoParcial += (curr.balance*cotizacion[0].bid)
       })
-  
       setSaldoTotal(saldoParcial.toFixed(2))
-      console.log('cambio saldo')
       setSaldoUpdate(false)
     }
     // eslint-disable-next-line
   }, [saldoUpdate])
 
+  useEffect(() => {
+    const consultarDai = async () => {
+      const url = 'https://criptoya.com/api/belo/dai/ars/0.5'
+      const respuesta = await fetch(url)
+      const resultadoApi = await respuesta.json()
+      let dai = {
+        id: 'dai',
+        bid: resultadoApi.bid,
+        ask: resultadoApi.ask
+      }
+
+      const url2 = 'https://criptoya.com/api/belo/btc/ars/0.5'
+      const respuesta2 = await fetch(url2)
+      const resultadoApi2 = await respuesta2.json()
+      let btc = {
+        id: 'btc',
+        bid: resultadoApi2.bid,
+        ask: resultadoApi2.ask
+      }
+
+      const url3 = 'https://criptoya.com/api/belo/eth/ars/0.5'
+      const respuesta3 = await fetch(url3)
+      const resultadoApi3 = await respuesta3.json()
+      let eth = {
+        id: 'eth',
+        bid: resultadoApi3.bid,
+        ask: resultadoApi3.ask
+      }
+
+      const url4 = 'https://criptoya.com/api/belo/usdt/ars/0.5'
+      const respuesta4 = await fetch(url4)
+      const resultadoApi4 = await respuesta4.json()
+      let usdt = {
+        id: 'usdt',
+        bid: resultadoApi4.bid,
+        ask: resultadoApi4.ask
+      }
+
+      let ars = {
+        id: 'ars',
+        bid: 1,
+        ask: 1
+      }
+
+      let cotizacionesArray = [btc, eth, dai, usdt, ars]
+      setCotizaciones(cotizacionesArray)
+    }
+    consultarDai()
+
+  }, [])
+
   return (
       <>
-        <Router>
-          <Routes>
-            <Route exact path="/" element={
-              <Home
-                saldo={saldo}
-                saldoTotal={saldoTotal}
-                setSaldoTotal={setSaldoTotal}
-                movimientosArray={movimientosArray} 
-              />} />
-            <Route exact path="/convertir" element={
-              <Convertir
-                saldo={saldo}
-                setSaldo={setSaldo}
-                setSaldoUpdate={setSaldoUpdate}
-                movimientosArray={movimientosArray}
-                setMovimientosArray={setMovimientosArray} />}
-            />
-            <Route exact path="/deposito" element={<Deposito saldo={saldo} />} /> 
-            <Route exact path="/deposito/:currencyId" element={
-              <DepositoMoneda 
-                saldo={saldo}
-                setSaldo={setSaldo} 
-                setMovimientosArray={setMovimientosArray}
-                setSaldoUpdate={setSaldoUpdate}
-                movimientosArray={movimientosArray} />} />
-            <Route exact path="/retiro/:currencyId" element={
-              <RetiroMoneda
-                saldo={saldo}
-                setSaldo={setSaldo}
-                movimientosArray={movimientosArray}
-                setSaldoUpdate={setSaldoUpdate}
-                setMovimientosArray={setMovimientosArray} />} />            
-            <Route exact path="/retiro" element={<Retiro saldo={saldo} />} />
-          </Routes>
-        </Router>
+        {cotizaciones.length > 0 ? 
+          <Router>
+            <Routes>
+              <Route exact path="/" element={
+                <Home
+                  saldo={saldo}
+                  saldoTotal={saldoTotal}
+                  setSaldoTotal={setSaldoTotal}
+                  movimientosArray={movimientosArray}
+                  cotizaciones={cotizaciones}
+                />} />
+              <Route exact path="/convertir" element={
+                <Convertir
+                  saldo={saldo}
+                  setSaldo={setSaldo}
+                  setSaldoUpdate={setSaldoUpdate}
+                  movimientosArray={movimientosArray}
+                  setMovimientosArray={setMovimientosArray}
+                  cotizaciones={cotizaciones} />}
+              />
+              <Route exact path="/deposito" element={<Deposito saldo={saldo} />} /> 
+              <Route exact path="/deposito/:currencyId" element={
+                <DepositoMoneda 
+                  saldo={saldo}
+                  setSaldo={setSaldo} 
+                  setMovimientosArray={setMovimientosArray}
+                  setSaldoUpdate={setSaldoUpdate}
+                  movimientosArray={movimientosArray} />} />
+              <Route exact path="/retiro/:currencyId" element={
+                <RetiroMoneda
+                  saldo={saldo}
+                  setSaldo={setSaldo}
+                  movimientosArray={movimientosArray}
+                  setSaldoUpdate={setSaldoUpdate}
+                  setMovimientosArray={setMovimientosArray} />} />            
+              <Route exact path="/retiro" element={<Retiro saldo={saldo} />} />
+            </Routes>
+          </Router> :
+          <p>Cargando...</p>
+        
+      }
       </>
   );
 }

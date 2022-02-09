@@ -7,6 +7,7 @@ const DepositoMoneda = ({saldo, setSaldo, setMovimientosArray, movimientosArray,
     const [depositoStatus, setDepositoStatus] = useState(false)
 
     const {currencyId} = useParams()
+    let currency = saldo.filter(curr => curr.id === currencyId)
 
     const handleDeposito = e => {
         setDeposito(parseFloat(e.target.value))
@@ -23,7 +24,7 @@ const DepositoMoneda = ({saldo, setSaldo, setMovimientosArray, movimientosArray,
             
             movimientosArray.unshift({
                 nombre: `Deposito`,
-                saldo: `+${deposito} ${currencyId.toUpperCase()}`,
+                saldo: `+${deposito.toFixed(currency[0].decimals)} ${currencyId.toUpperCase()}`,
                 img: "https://icongr.am/material/arrow-down.svg?size=128&color=614ad9",
                 style: "entrada-saldo"
             })

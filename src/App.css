@@ -54,6 +54,7 @@
 
 .navbar-top-container{
   margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 .navbar-top{
@@ -206,6 +207,7 @@
 .saldo-container{
   padding: 15px 10px;
   min-width: 150px;
+  height: 120px;
   margin: 5px;
   border-radius: 10px;
   background-color: #fff;
@@ -488,5 +490,9 @@
   .deposito-title{
     text-align: center;
     margin-bottom: 15px;
+  }
+
+  .balance-container{
+    text-align: end;
   }
 }

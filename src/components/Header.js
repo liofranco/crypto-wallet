@@ -9,7 +9,7 @@ const Header = ({saldoTotal}) => {
                     CW
                 </div> */}
                 <div className="saldo">
-                    ${saldoTotal}
+                    {saldoTotal} ARS
                 </div>
                 {/* <div className="user-img flex-center">
                     LF
