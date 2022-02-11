@@ -5,7 +5,7 @@ const Movimientos = ({movimientosArray}) => {
 
     return (
         <div className="flex-center movimientos-section">
-            <h3>Movimientos</h3>
+            <h3 className='movimientos-title'>Movimientos</h3>
             {movimientosArray.length > 0 ? <div className="movimientos-container flex-center">
             {movimientosArray.map( (movimiento, i) => {
                 return (

@@ -23,10 +23,14 @@ const Convertir =
 
     const handleSwap1 = e => {
         setSwap1(e.target.value)
+        setBalanceSwap1('')
+        setBalanceSwap2('')
     }
 
     const handleSwap2 = e => {
         setSwap2(e.target.value)
+        setBalanceSwap1('')
+        setBalanceSwap2('')
     }
 
     const handleClick = () => {
@@ -53,6 +57,7 @@ const Convertir =
                     movimientosArray.unshift({
                         nombre: `Cambio ${swap1.toUpperCase()}→${swap2.toUpperCase()}`,
                         saldo: `+${balanceSwap2.toFixed(curr.decimals)} ${swap2.toUpperCase()}`,
+                        cambio: `-${balanceSwap1.toFixed(currency1[0].decimals)} ${swap1.toUpperCase()}`,
                         img: "https://icongr.am/material/swap-horizontal.svg?size=128&color=614ad9",
                         style: "entrada-saldo"
                     })
@@ -109,8 +114,10 @@ const Convertir =
                                 </select>
                             </div>
                             <form onSubmit={submitSwap}>
-                                <input type="number" onChange={handleChangeSwap1} value={balanceSwap1} />
+                                <input className={`swap-input ${balanceSwap1 > currency1[0].balance ? 'input-error' : ''}`} type="number" onChange={handleChangeSwap1} value={balanceSwap1} />
                             </form>
+                            {balanceSwap1 > currency1[0].balance ?
+                                <p className='saldo-error'>Saldo en {swap1.toUpperCase()} insuficiente</p> : null}
                         </div>
                         <img onClick={handleClick} src="https://icongr.am/material/swap-vertical.svg?size=30&color=614ad9" className='movimiento-img' alt="" />
                         <div className="swap-container">
@@ -124,7 +131,7 @@ const Convertir =
                                 </select>
                             </div>
                             <form onSubmit={submitSwap}>
-                                <input onChange={handleChangeSwap2} value={balanceSwap2} type="text" />
+                                <input className='swap-input' onChange={handleChangeSwap2} value={balanceSwap2} type="number" />
                             </form>
                         </div>
                         <div className="btn-form-container">

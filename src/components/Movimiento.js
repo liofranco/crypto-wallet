@@ -13,7 +13,10 @@ const Movimiento = ({movimiento}) => {
                     <p className="movimiento-date"></p>
                 </div>
             </div>
-            <p className={`movimiento-saldo ${movimiento.style}`}>{movimiento.saldo}</p>
+            <div className="movimiento-saldo-info">
+                <p className={`movimiento-saldo ${movimiento.style}`}>{movimiento.saldo}</p>
+                {movimiento.cambio ? <p className='movimiento-cambio'>{movimiento.cambio}</p> : null}
+            </div>
         </div>
     );
 };

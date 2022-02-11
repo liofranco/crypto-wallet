@@ -61,6 +61,7 @@ function App() {
 
   const [saldoTotal, setSaldoTotal] = useState(0)
   const [saldoUpdate, setSaldoUpdate] = useState(false)
+  const [ocultar, setOcultar] = useState(false)
 
   const [movimientosArray, setMovimientosArray] = useState([])
 
@@ -130,7 +131,8 @@ function App() {
 
   return (
       <>
-        {cotizaciones.length > 0 ? 
+        {cotizaciones.length > 0 ?
+          <main className='main-container'>
           <Router>
             <Routes>
               <Route exact path="/" element={
@@ -140,6 +142,8 @@ function App() {
                   setSaldoTotal={setSaldoTotal}
                   movimientosArray={movimientosArray}
                   cotizaciones={cotizaciones}
+                  ocultar={ocultar}
+                  setOcultar={setOcultar}
                 />} />
               <Route exact path="/convertir" element={
                 <Convertir
@@ -167,7 +171,8 @@ function App() {
                   setMovimientosArray={setMovimientosArray} />} />            
               <Route exact path="/retiro" element={<Retiro saldo={saldo} />} />
             </Routes>
-          </Router> :
+          </Router>
+          </main> :
           <p>Cargando...</p>
         
       }

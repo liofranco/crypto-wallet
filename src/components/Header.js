@@ -1,19 +1,23 @@
 import React from 'react';
 
-const Header = ({saldoTotal}) => {
+const Header = ({saldoTotal, ocultar, setOcultar}) => {
+
+    
+
+    const ocultarSaldo = () => {
+        if(ocultar){
+            setOcultar(false)
+        } else setOcultar(true)
+    }
 
     return (
         <div className="header-container flex-center">
             <div className="flex-center header">
-                {/* <div className="">
-                    CW
-                </div> */}
+                <p>Saldo total</p>
                 <div className="saldo">
-                    {saldoTotal} ARS
+                    <p>{!ocultar ? saldoTotal : '****'} ARS</p>
+                    <img onClick={ocultarSaldo} src="https://icongr.am/material/eye.svg?size=30&color=614ad9" alt="" />
                 </div>
-                {/* <div className="user-img flex-center">
-                    LF
-                </div> */}
             </div>
         </div>
     );

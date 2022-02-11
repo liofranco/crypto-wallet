@@ -14,7 +14,7 @@ const Retiro = ({saldo}) => {
                                 <img src={currency.img} alt="" className="coin-img" />
                                 <h3>{currency.name}</h3>
                             </div>
-                            <p>{currency.balance} {currency.currency}</p>
+                            <p>{currency.balance.toFixed(currency.decimals)} {currency.currency}</p>
                         </Link>    
                     )
                 })}
