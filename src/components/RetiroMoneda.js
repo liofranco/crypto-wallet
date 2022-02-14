@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 const RetiroMoneda = ({saldo, setSaldo, movimientosArray, setMovimientosArray, setSaldoUpdate}) => {
 
@@ -9,8 +9,6 @@ const RetiroMoneda = ({saldo, setSaldo, movimientosArray, setMovimientosArray, s
     const [retiroStatus, setRetiroStatus] = useState(false)
 
     let monedaRetiro = saldo.filter( curr => curr.id === currencyId)
-
-    const navigate = useNavigate()
 
     const { balance } = monedaRetiro[0]
 
