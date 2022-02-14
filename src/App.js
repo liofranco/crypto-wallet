@@ -7,6 +7,8 @@ import Retiro from './pages/Retiro';
 import Convertir from './pages/Convertir';
 import DepositoMoneda from './components/DepositoMoneda';
 import RetiroMoneda from './components/RetiroMoneda';
+import Saldo from './components/Saldo';
+import Saldos from './components/Saldos';
 
 function App() {
 
@@ -28,7 +30,7 @@ function App() {
       balance: 0,
       decimals: 8,
       symbol: 'BTC',
-      img: 'img/btc.png'
+      img: '/img/btc.png'
     },
     {
       currency: 'ETH',
@@ -37,7 +39,7 @@ function App() {
       balance: 0,
       decimals: 6,
       symbol: 'ETH',
-      img: 'img/eth.png'
+      img: '/img/eth.png'
     },
     {
       currency: 'DAI',
@@ -46,7 +48,7 @@ function App() {
       balance: 0,
       decimals: 2,
       symbol: 'DAI',
-      img: 'img/dai.png'
+      img: '/img/dai.png'
     },
     {
       currency: 'USDT',
@@ -55,13 +57,15 @@ function App() {
       balance: 0,
       decimals: 2,
       symbol: 'USDT',
-      img: 'img/usdt.png'
+      img: '/img/usdt.png'
     }
   ])
 
   const [saldoTotal, setSaldoTotal] = useState(0)
   const [saldoUpdate, setSaldoUpdate] = useState(false)
   const [ocultar, setOcultar] = useState(false)
+  const [swap1, setSwap1] = useState('ars')
+  const [swap2, setSwap2] = useState('btc')
 
   const [movimientosArray, setMovimientosArray] = useState([])
 
@@ -144,6 +148,8 @@ function App() {
                   cotizaciones={cotizaciones}
                   ocultar={ocultar}
                   setOcultar={setOcultar}
+                  setSwap1={setSwap1}
+                  setSwap2={setSwap2}
                 />} />
               <Route exact path="/convertir" element={
                 <Convertir
@@ -152,9 +158,13 @@ function App() {
                   setSaldoUpdate={setSaldoUpdate}
                   movimientosArray={movimientosArray}
                   setMovimientosArray={setMovimientosArray}
-                  cotizaciones={cotizaciones} />}
+                  cotizaciones={cotizaciones}
+                  swap1={swap1}
+                  setSwap1={setSwap1}
+                  setSwap2={setSwap2}
+                  swap2={swap2}/>}
               />
-              <Route exact path="/deposito" element={<Deposito saldo={saldo} />} /> 
+              <Route exact path="/deposito" element={<Deposito saldo={saldo} cotizaciones={cotizaciones} />} /> 
               <Route exact path="/deposito/:currencyId" element={
                 <DepositoMoneda 
                   saldo={saldo}
@@ -170,6 +180,15 @@ function App() {
                   setSaldoUpdate={setSaldoUpdate}
                   setMovimientosArray={setMovimientosArray} />} />            
               <Route exact path="/retiro" element={<Retiro saldo={saldo} />} />
+              <Route exact path="/saldos" element={
+                <Saldos saldo={saldo} cotizaciones={cotizaciones} ocultar={ocultar} />
+              } />
+              <Route exact path="/saldos/:saldoId" element={
+                <Saldo
+                  saldo={saldo}
+                  cotizaciones={cotizaciones}
+                  setSwap1={setSwap1}
+                  setSwap2={setSwap2} />} />
             </Routes>
           </Router>
           </main> :

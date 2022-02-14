@@ -16,7 +16,7 @@ const Header = ({saldoTotal, ocultar, setOcultar}) => {
                 <p>Saldo total</p>
                 <div className="saldo">
                     <p>{!ocultar ? saldoTotal : '****'} ARS</p>
-                    <img onClick={ocultarSaldo} src="https://icongr.am/material/eye.svg?size=30&color=614ad9" alt="" />
+                    <img onClick={ocultarSaldo} src="https://icongr.am/material/eye.svg?size=25&color=614ad9" alt="" />
                 </div>
             </div>
         </div>

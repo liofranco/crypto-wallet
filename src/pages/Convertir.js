@@ -7,10 +7,10 @@ const Convertir =
     setSaldoUpdate, 
     movimientosArray, 
     setMovimientosArray,
-    cotizaciones}) => {
+    cotizaciones,
+    swap1, setSwap1,
+    swap2, setSwap2}) => {
 
-    const [swap1, setSwap1] = useState('ars')
-    const [swap2, setSwap2] = useState('btc')
     const [balanceSwap1, setBalanceSwap1] = useState('')
     const [balanceSwap2, setBalanceSwap2] = useState('')
     const [swapStatus, setSwapStatus] = useState(false)
@@ -54,12 +54,20 @@ const Convertir =
                     curr.balance -= parseFloat(balanceSwap1)
                 } else if(curr.id === swap2){
                     curr.balance += parseFloat(balanceSwap2)
+                    const d = new Date()
                     movimientosArray.unshift({
                         nombre: `Cambio ${swap1.toUpperCase()}→${swap2.toUpperCase()}`,
                         saldo: `+${balanceSwap2.toFixed(curr.decimals)} ${swap2.toUpperCase()}`,
                         cambio: `-${balanceSwap1.toFixed(currency1[0].decimals)} ${swap1.toUpperCase()}`,
                         img: "https://icongr.am/material/swap-horizontal.svg?size=128&color=614ad9",
-                        style: "entrada-saldo"
+                        style: "entrada-saldo",
+                        date: {
+                            hour: d.getHours(),
+                            minutes: d.getMinutes(),
+                            day: d.getDate(),
+                            month: d.getMonth()+1,
+                            year: d.getFullYear(), 
+                        }
                     })
                 }
     
@@ -94,6 +102,11 @@ const Convertir =
         } 
     }
 
+    const goBack = e => {
+        e.preventDefault()
+        window.history.back()
+    }
+
     return (
         <>
             {!swapStatus ? 
@@ -102,7 +115,7 @@ const Convertir =
                         <div className="swap-container">
                             <div className="swap-select">
                                 <div className='swap-disponible'>
-                                    <p>Disponible: {currency1[0].balance} {currency1[0].currency}</p>
+                                    <p>Disponible: {currency1[0].balance.toFixed(currency1[0].decimals)} {currency1[0].currency}</p>
                                     <button onClick={maxSwap} className='max-swap'>MAX</button>
                                 </div>
                                 <select name="" id="" value={swap1} onChange={handleSwap1}>
@@ -135,9 +148,9 @@ const Convertir =
                             </form>
                         </div>
                         <div className="btn-form-container">
-                            <Link to="/" className='btn-cancelar'>
+                            <button type='button' onClick={goBack} className='btn-cancelar'>
                                 Cancelar
-                            </Link>
+                            </button>
                             <button onClick={submitSwap} className='btn-confirmar' type='submit'>Confirmar</button>
                         </div>
         

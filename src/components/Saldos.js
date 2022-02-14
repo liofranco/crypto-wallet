@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Saldos = ({saldo, cotizaciones, ocultar}) => {
 
@@ -9,7 +10,7 @@ const Saldos = ({saldo, cotizaciones, ocultar}) => {
                 {saldo.map( currency => {
                     let cotizacion = cotizaciones.filter( curr => curr.id === currency.id)
                     return(
-                        <div key={currency.name} className="saldo-container">
+                        <Link to={`/saldos/${currency.id}`} key={currency.name} className="saldo-container">
                             <div className="currency-container">
                                 <img src={currency.img} alt="" className="coin-img" />
                                 <p>{currency.name}</p>
@@ -27,7 +28,7 @@ const Saldos = ({saldo, cotizaciones, ocultar}) => {
                                     <p className='balance-ars'>**** ARS</p> : null }
                             </div>
                             
-                        </div>        
+                        </Link>        
                     )
                 })}
             </div>

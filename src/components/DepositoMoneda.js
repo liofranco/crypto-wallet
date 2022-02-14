@@ -21,12 +21,21 @@ const DepositoMoneda = ({saldo, setSaldo, setMovimientosArray, movimientosArray,
                     curr.balance += deposito
                 }
             })
+
+            const d = new Date()
             
             movimientosArray.unshift({
                 nombre: `Deposito`,
                 saldo: `+${deposito.toFixed(currency[0].decimals)} ${currencyId.toUpperCase()}`,
                 img: "https://icongr.am/material/arrow-down.svg?size=128&color=614ad9",
-                style: "entrada-saldo"
+                style: "entrada-saldo",
+                date: {
+                    hour: d.getHours(),
+                    minutes: d.getMinutes(),
+                    day: d.getDate(),
+                    month: d.getMonth()+1,
+                    year: d.getFullYear(), 
+                }
             })
             
             setSaldo(saldo)
@@ -34,6 +43,11 @@ const DepositoMoneda = ({saldo, setSaldo, setMovimientosArray, movimientosArray,
             setMovimientosArray(movimientosArray)
             setDepositoStatus(true)
         }
+    }
+
+    const goBack = e => {
+        e.preventDefault()
+        window.history.back()
     }
 
     return (
@@ -48,9 +62,9 @@ const DepositoMoneda = ({saldo, setSaldo, setMovimientosArray, movimientosArray,
                         <input placeholder='0' className="input-deposito" type="number" step="0.00001" onChange={handleDeposito} />
                     </div>
                     <div className="btn-form-container">
-                        <Link to="/" className='btn-cancelar'>
+                        <button type='button' onClick={goBack} className='btn-cancelar'>
                             Cancelar
-                        </Link>
+                        </button>
                         <button className='btn-confirmar' type='submit'>Confirmar</button>
                     </div>
                 </form>
