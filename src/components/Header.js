@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext} from 'react';
+import { SaldoContext } from '../context/SaldoContext';
 
-const Header = ({saldoTotal, ocultar, setOcultar}) => {
+const Header = () => {
 
-    
+    const {saldoTotal, ocultar, setOcultar, cotizaciones} = useContext(SaldoContext)
 
     const ocultarSaldo = () => {
         if(ocultar){
@@ -14,10 +15,13 @@ const Header = ({saldoTotal, ocultar, setOcultar}) => {
         <div className="header-container flex-center">
             <div className="flex-center header">
                 <p>Saldo total</p>
-                <div className="saldo">
+                {cotizaciones.length > 0 ? 
+                    <div className="saldo">
                     <p>{!ocultar ? saldoTotal : '****'} ARS</p>
                     <img onClick={ocultarSaldo} src="https://icongr.am/material/eye.svg?size=25&color=614ad9" alt="" />
-                </div>
+                    </div> : <p>...</p>    
+                }
+                
             </div>
         </div>
     );

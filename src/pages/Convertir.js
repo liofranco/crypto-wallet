@@ -1,15 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { SaldoContext } from '../context/SaldoContext';
 
-const Convertir = 
-    ({saldo, 
-    setSaldo, 
-    setSaldoUpdate, 
-    movimientosArray, 
-    setMovimientosArray,
-    cotizaciones,
-    swap1, setSwap1,
-    swap2, setSwap2}) => {
+const Convertir = () => {
+
+    const {
+        saldo,
+        setSaldo,
+        setSaldoUpdate,
+        movimientosArray,
+        setMovimientosArray,
+        cotizaciones,
+        swap1, setSwap1,
+        swap2, setSwap2    
+    } = useContext(SaldoContext)
 
     const [balanceSwap1, setBalanceSwap1] = useState('')
     const [balanceSwap2, setBalanceSwap2] = useState('')
@@ -69,6 +73,33 @@ const Convertir =
                             year: d.getFullYear(), 
                         }
                     })
+
+                    /* movimientosArray.unshift({
+                        nombre: `Cambiaste ${swap1.toUpperCase()}`,
+                        saldo: `-${balanceSwap1.toFixed(currency1[0].decimals)} ${swap1.toUpperCase()}`,
+                        img: "https://icongr.am/material/swap-horizontal.svg?size=128&color=614ad9",
+                        style: "",
+                        date: {
+                            hour: d.getHours(),
+                            minutes: d.getMinutes(),
+                            day: d.getDate(),
+                            month: d.getMonth()+1,
+                            year: d.getFullYear(), 
+                        }
+                    })
+                    movimientosArray.unshift({
+                        nombre: `Recibiste ${swap2.toUpperCase()}`,
+                        saldo: `+${balanceSwap2.toFixed(curr.decimals)} ${swap2.toUpperCase()}`,
+                        img: "https://icongr.am/material/swap-horizontal.svg?size=128&color=614ad9",
+                        style: "entrada-saldo",
+                        date: {
+                            hour: d.getHours(),
+                            minutes: d.getMinutes(),
+                            day: d.getDate(),
+                            month: d.getMonth()+1,
+                            year: d.getFullYear(), 
+                        }
+                    }) */
                 }
     
     

@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { SaldoContext } from '../context/SaldoContext';
 
-const Retiro = ({saldo}) => {
+const Retiro = () => {
+
+    const {saldo} = useContext(SaldoContext)
 
     return (
         <div className="retiro-container section-container">

@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext} from 'react';
+import { SaldoContext } from '../context/SaldoContext';
 import { Link } from 'react-router-dom'
 
-const NavbarTop = ({currency, setSwap1, setSwap2}) => {
+const NavbarTop = ({currency}) => {
+
+    const {setSwap1, setSwap2} = useContext(SaldoContext)
 
     const setSwap = () => {
         if(currency){

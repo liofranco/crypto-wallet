@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext} from 'react';
+import { SaldoContext } from '../context/SaldoContext';
 import Movimiento from './Movimiento';
 
-const Movimientos = ({movimientosArray}) => {
+const Movimientos = () => {
+
+    const {movimientosArray} = useContext(SaldoContext)
 
     return (
         <div className="flex-center movimientos-section">

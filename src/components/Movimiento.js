@@ -9,6 +9,10 @@ const Movimiento = ({movimiento}) => {
         setMovimientosDetalles(true)
     }
 
+    const closeModal = () => {
+        setMovimientosDetalles(false)
+    }
+
     return (
         <>
         <div onClick={handleMovimiento} className="movimiento">
@@ -25,14 +29,23 @@ const Movimiento = ({movimiento}) => {
             </div>
         </div>
         {movimientoDetalles ?
-            <div className='mov-detalles'>
-                <h4>{movimiento.nombre}</h4>
-                <h2>{movimiento.saldo}</h2>
-                <h4>{movimiento.cambio || null}</h4>
-                <p>Estado: Aprobado</p>
-                <p>Fecha: {day}/{month}/{year} - {hour}:{minutes}</p>
-                <p>{movimiento.compra}</p>
-            </div> : null}
+            <div className="modal-container">
+                <div className={`mov-detalles ${movimientoDetalles ? `visible` : ''}`}>
+                    <button className='close-modal' onClick={closeModal}>X</button>
+                    <h4 className='mov-name'>{movimiento.nombre}</h4>
+                    <h2 className={`mov-saldo ${movimiento.style}`}>{movimiento.saldo}</h2>
+                    <h4>{movimiento.cambio || null}</h4>
+                    <div className="mov-info">
+                        <p>Estado</p>
+                        <p className='entrada-saldo'>Aprobado</p>
+                    </div>
+                    <div className="mov-info">
+                        <p>Fecha</p>
+                        <p>{day}/{month}/{year} - {hour}:{minutes}</p>
+                    </div>
+                </div>
+            </div>
+             : null}
         </>
     );
 };

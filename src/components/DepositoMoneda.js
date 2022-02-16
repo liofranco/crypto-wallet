@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom'
+import { SaldoContext } from '../context/SaldoContext';
 
-const DepositoMoneda = ({saldo, setSaldo, setMovimientosArray, movimientosArray, setSaldoUpdate}) => {
+const DepositoMoneda = () => {
 
+    const {
+        saldo,
+        setSaldo,
+        setMovimientosArray,
+        movimientosArray,
+        setSaldoUpdate
+    } = useContext(SaldoContext)
     const [deposito, setDeposito] = useState('')
     const [depositoStatus, setDepositoStatus] = useState(false)
 
