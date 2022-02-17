@@ -7,9 +7,9 @@ import Retiro from './pages/Retiro';
 import Convertir from './pages/Convertir';
 import DepositoMoneda from './components/DepositoMoneda';
 import RetiroMoneda from './components/RetiroMoneda';
-import Saldo from './components/Saldo';
 import Saldos from './components/Saldos';
 import SaldoProvider from './context/SaldoContext';
+import SaldoDetalle from './components/SaldoDetalle';
 
 function App() {
 
@@ -27,7 +27,7 @@ function App() {
                 <Route exact path="/retiro" element={<Retiro />} />
                 <Route exact path="/saldos" element={<Saldos />
                 } />
-                <Route exact path="/saldos/:saldoId" element={<Saldo />} />
+                <Route exact path="/saldos/:saldoId" element={<SaldoDetalle />} />
               </Routes>
             </Router>
           </main>

@@ -1,27 +1,23 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import Saldo from '../components/Saldo';
 import { SaldoContext } from '../context/SaldoContext';
 
 const Retiro = () => {
 
-    const {saldo} = useContext(SaldoContext)
+    const {saldo, cotizaciones} = useContext(SaldoContext)
 
     return (
         <div className="retiro-container section-container">
             <h2 className="retiro-title section-title">¿ Que queres retirar ?</h2>
-            <div className="flex-center saldos-container">
-                {saldo.map(currency => {
-                    return(
-                        <Link key={currency.id} to={`/retiro/${currency.id}`} className="saldo-container">
-                            <div className="currency-container">
-                                <img src={currency.img} alt="" className="coin-img" />
-                                <h3>{currency.name}</h3>
-                            </div>
-                            <p>{currency.balance.toFixed(currency.decimals)} {currency.currency}</p>
-                        </Link>    
-                    )
-                })}
-            </div>
+            {cotizaciones.length > 0 ?
+                <div className="flex-center saldos-container">
+                    {saldo.map( currency => {
+                        let cotizacion = cotizaciones.filter( curr => curr.id === currency.id)
+                        return(
+                            <Saldo key={currency.id} currency={currency} cotizacion={cotizacion} route={'retiro'} />       
+                        )
+                    })}
+                </div> : <p>Cargando...</p> }
         </div>
     );
 };

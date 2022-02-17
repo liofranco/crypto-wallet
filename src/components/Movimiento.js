@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
+import ModalMovimiento from './ModalMovimiento';
 
 const Movimiento = ({movimiento}) => {
 
     const [movimientoDetalles, setMovimientosDetalles] = useState(false)
 
-    const { day, month, year, hour, minutes } = movimiento.date
     const handleMovimiento = () => {
         setMovimientosDetalles(true)
-    }
-
-    const closeModal = () => {
-        setMovimientosDetalles(false)
     }
 
     return (
@@ -29,22 +25,11 @@ const Movimiento = ({movimiento}) => {
             </div>
         </div>
         {movimientoDetalles ?
-            <div className="modal-container">
-                <div className={`mov-detalles ${movimientoDetalles ? `visible` : ''}`}>
-                    <button className='close-modal' onClick={closeModal}>X</button>
-                    <h4 className='mov-name'>{movimiento.nombre}</h4>
-                    <h2 className={`mov-saldo ${movimiento.style}`}>{movimiento.saldo}</h2>
-                    <h4>{movimiento.cambio || null}</h4>
-                    <div className="mov-info">
-                        <p>Estado</p>
-                        <p className='entrada-saldo'>Aprobado</p>
-                    </div>
-                    <div className="mov-info">
-                        <p>Fecha</p>
-                        <p>{day}/{month}/{year} - {hour}:{minutes}</p>
-                    </div>
-                </div>
-            </div>
+            <ModalMovimiento 
+                movimiento={movimiento}
+                movimientoDetalles={movimientoDetalles}
+                setMovimientosDetalles={setMovimientosDetalles}
+            />
              : null}
         </>
     );
