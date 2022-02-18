@@ -1,12 +1,13 @@
 import React, { useState,useContext } from 'react';
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { SaldoContext } from '../context/SaldoContext';
+import ModalConfirmacion from './ModalConfirmacion';
 
 const RetiroMoneda = () => {
 
     const {saldo, setSaldo, movimientosArray, setMovimientosArray, setSaldoUpdate} = useContext(SaldoContext)
 
-    const [retiro, setRetiro] = useState(0)
+    const [retiro, setRetiro] = useState('')
     const [mostrarError, setMostrarError] = useState(false)
     const {currencyId} = useParams()
     const [retiroStatus, setRetiroStatus] = useState(false)
@@ -16,7 +17,10 @@ const RetiroMoneda = () => {
     const { balance } = monedaRetiro[0]
 
     const handleRetiro = e => {
-        setRetiro(parseFloat(e.target.value))
+        if(e.target.value === ''){
+            setRetiro('')
+        } else setRetiro(parseFloat(e.target.value))
+        
         if(balance < e.target.value){
             setMostrarError(true)
         } else setMostrarError(false)
@@ -32,7 +36,7 @@ const RetiroMoneda = () => {
                         const d = new Date()           
                         movimientosArray.unshift({
                             nombre: `Retiro`,
-                            saldo: `-${retiro} ${currencyId.toUpperCase()}`,
+                            saldo: `-${retiro.toFixed(curr.decimals)} ${currencyId.toUpperCase()}`,
                             img: "https://icongr.am/material/arrow-up.svg?size=128&color=614ad9",
                             style: "",
                             date: {
@@ -57,6 +61,11 @@ const RetiroMoneda = () => {
 
     }
 
+    const maxRetiro = e => {
+        e.preventDefault()
+        setRetiro(balance)
+    }
+
     const goBack = e => {
         e.preventDefault()
         window.history.back()
@@ -67,12 +76,23 @@ const RetiroMoneda = () => {
             {!retiroStatus ? 
                 (<div className='retiro-moneda-container'>
                     <div className="retiro-form-container">
-                        <h2 className="deposito-title section-title">Ingresá el monto</h2>
+                        <h2 className="deposito-title section-title">¿Cuánto queres retirar?</h2>
                         <form className="retiro-form" onSubmit={submitRetiro}>
                             <p className='currencyid'>{currencyId}</p>
-                            <input className={`input-deposito ${mostrarError ? 'saldo-error' : '' }`} placeholder='0' type="number" step="0.00001" onChange={handleRetiro} />
-                            {mostrarError ? <p className='saldo-error'>Saldo insuficiente</p> : 
-                                <p className='balance-disponible'>Tenes {balance} {currencyId.toUpperCase()} disponible</p>}
+                            <input 
+                                className={`input-deposito ${mostrarError ? 'saldo-error' : '' }`}
+                                placeholder='0'
+                                type="number"
+                                step="0.00001"
+                                onChange={handleRetiro}
+                                value={retiro}
+                            />
+                            {mostrarError ? <p className='saldo-error'>Saldo insuficiente</p> :
+                                <> 
+                                    <p className='balance-disponible'>Tenes {balance} {currencyId.toUpperCase()} disponible</p>
+                                    <button type='button' onClick={maxRetiro} className='max-swap'>MAX</button>
+                                </>
+                                }
                             <div className="btn-form-container">
                                 <button type='button' onClick={goBack} className='btn-cancelar'>
                                     Cancelar
@@ -82,16 +102,11 @@ const RetiroMoneda = () => {
                         </form>
                     </div>
                 </div>): 
-                (<div className="retiro-moneda-container">
-                    <div className='deposit-success-container'>
-                        <img src="https://icongr.am/material/check-circle.svg?size=80&color=ffffff" alt="" />
-                        <h3>Retiro confirmado</h3>
-                        <p>Tu retiro por {retiro} {currencyId.toUpperCase()} fue realizado con exito</p>
-                        <Link to="/" className='btn-volver-inicio'>
-                            <h3>Volver a inicio</h3>
-                        </Link>
-                    </div>
-                </div>)}
+                (<ModalConfirmacion 
+                    operacion={'retiro'}
+                    cantidad={retiro}
+                    currency={currencyId}
+                /> )}
         </>
     );
 };

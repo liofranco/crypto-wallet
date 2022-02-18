@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import ModalConfirmacion from '../components/ModalConfirmacion';
 import { SaldoContext } from '../context/SaldoContext';
 
 const Convertir = () => {
@@ -187,16 +187,11 @@ const Convertir = () => {
         
                     </div>
                 </div> : 
-                <div className="retiro-moneda-container">
-                    <div className='deposit-success-container'>
-                        <img src="https://icongr.am/material/check-circle.svg?size=80&color=ffffff" alt="" />
-                        <h3>Cambio confirmado</h3>
-                        <p>Tu cambio fue realizado con exito</p>
-                        <Link to="/" className='btn-volver-inicio'>
-                            <h3>Volver a inicio</h3>
-                        </Link>
-                    </div>
-                </div> }
+                <ModalConfirmacion 
+                    operacion={'cambio'}
+                    cantidad={balanceSwap2}
+                    currency={swap2}
+                /> }
         </>
     );
 };

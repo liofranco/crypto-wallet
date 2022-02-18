@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../components/Header';
+import BalanceTotal from '../components/BalanceTotal';
 import Movimientos from '../components/Movimientos';
 import NavbarTop from '../components/NavbarTop';
 import Saldos from '../components/Saldos';
@@ -8,7 +8,7 @@ const Home = () => {
 
     return (
         <>
-            <Header />
+            <BalanceTotal />
             <NavbarTop />
             <Saldos />
             <Movimientos />

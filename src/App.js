@@ -16,20 +16,22 @@ function App() {
   return (
       <SaldoProvider>
           <main className='main-container'>
-            <Router>
-              <Routes>
-                <Route exact path="/" element={<Home />} />
-                <Route exact path="/convertir" element={<Convertir />}
-                />
-                <Route exact path="/deposito" element={<Deposito />} /> 
-                <Route exact path="/deposito/:currencyId" element={<DepositoMoneda />} />
-                <Route exact path="/retiro/:currencyId" element={<RetiroMoneda />} />            
-                <Route exact path="/retiro" element={<Retiro />} />
-                <Route exact path="/saldos" element={<Saldos />
-                } />
-                <Route exact path="/saldos/:saldoId" element={<SaldoDetalle />} />
-              </Routes>
-            </Router>
+            <div className="main">
+              <Router>
+                <Routes>
+                  <Route exact path="/" element={<Home />} />
+                  <Route exact path="/convertir" element={<Convertir />}
+                  />
+                  <Route exact path="/deposito" element={<Deposito />} /> 
+                  <Route exact path="/deposito/:currencyId" element={<DepositoMoneda />} />
+                  <Route exact path="/retiro/:currencyId" element={<RetiroMoneda />} />            
+                  <Route exact path="/retiro" element={<Retiro />} />
+                  <Route exact path="/saldos" element={<Saldos />
+                  } />
+                  <Route exact path="/saldos/:saldoId" element={<SaldoDetalle />} />
+                </Routes>
+              </Router>
+            </div>
           </main>
       </SaldoProvider>
   );
