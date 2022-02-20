@@ -2,15 +2,16 @@ import React, { useContext} from 'react';
 import { SaldoContext } from '../context/SaldoContext';
 import Saldo from './Saldo';
 import Skeleton from './Skeleton';
+import style from '../styles/saldos.module.css'
 
 const Saldos = () => {
 
     const {saldo, cotizaciones} = useContext(SaldoContext)
 
     return (
-        <div className='mis-saldos'>
+        <div className={style.mis_saldos}>
             <h3>Mis saldos</h3>
-            <div className="flex-center saldos-container">
+            <div className={style.saldos_container}>
                     {saldo.map( currency => {
                         if(cotizaciones.length > 0){
                             let cotizacion = cotizaciones.filter( curr => curr.id === currency.id)

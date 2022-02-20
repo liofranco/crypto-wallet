@@ -1,0 +1,98 @@
+.mis_saldos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1000px;
+  width: 95%;
+  margin-top: 15px;
+}
+
+.mis_saldos h3 {
+  align-self: start;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.saldos_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.saldo_container {
+  padding: 15px;
+  min-width: 150px;
+  height: 120px;
+  margin: 5px;
+  border-radius: 10px;
+  background-color: #fff;
+  text-decoration: none;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+  border: 1px solid transparent;
+  transition: all 1s;
+}
+
+.saldo_container:hover {
+  border-color: var(--violeta);
+}
+
+.currency_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .currency_container p{
+    font-weight: 600;
+    font-size: 18px;
+    margin-left: 5px;
+  }
+  
+  .balance_container{
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .balance_container p:first-child{
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+@media (max-width: 540px) {
+  .saldos_container {
+    flex-direction: column;
+  }
+
+  .saldo_container {
+    width: 90%;
+    height: 50px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .balance_container{
+    margin: 0;
+    text-align: end;
+  }
+
+  .balance_container p:first-child{
+    font-size: 18px;
+  }
+
+  .currency_container img{
+    width: 25px;
+    height: 25px;
+  }
+
+  .currency_container h3{
+    margin-left: 7px;
+    font-size: 20px;
+  }
+}

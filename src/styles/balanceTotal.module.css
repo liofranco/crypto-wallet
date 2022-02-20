@@ -1,0 +1,39 @@
+.balancetotal_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.balancetotal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 40px;
+  flex-direction: column;
+}
+
+.balancetotal p {
+  color: var(--violeta);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.saldototal {
+  color: var(--violeta);
+  display: flex;
+  align-items: center;
+}
+
+.saldototal p {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.saldototal img {
+  margin-left: 10px;
+  cursor: pointer;
+}

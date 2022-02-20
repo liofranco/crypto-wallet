@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import style from '../styles/movimientos.module.css'
 import ModalMovimiento from './ModalMovimiento';
 
 const Movimiento = ({movimiento}) => {
@@ -11,17 +12,14 @@ const Movimiento = ({movimiento}) => {
 
     return (
         <>
-        <div onClick={handleMovimiento} className="movimiento">
-            <div className="movimiento-info flex-center">
-                <img src={movimiento.img} className="movimiento-img" alt=""/>
-                <div className="movimiento-detalles">
-                    <h3 className="movimiento-nombre">{movimiento.nombre}</h3>
-                    <p className="movimiento-date"></p>
-                </div>
+        <div onClick={handleMovimiento} className={style.movimiento}>
+            <div className={style.info}>
+                <img src={movimiento.img} className={style.img} alt=""/>
+                <h4 className={style.nombre}>{movimiento.nombre}</h4>
             </div>
-            <div className="movimiento-saldo-info">
-                <p className={`movimiento-saldo ${movimiento.style}`}>{movimiento.saldo}</p>
-                {movimiento.cambio ? <p className='movimiento-cambio'>{movimiento.cambio}</p> : null}
+            <div className={style.saldo_info}>
+                <p className={`${style.saldo} ${movimiento.style}`}>{movimiento.saldo}</p>
+                {movimiento.cambio ? <p className={style.cambio}>{movimiento.cambio}</p> : null}
             </div>
         </div>
         {movimientoDetalles ?

@@ -2,6 +2,7 @@ import React, { useState,useContext } from 'react';
 import { useParams } from 'react-router-dom'
 import { SaldoContext } from '../context/SaldoContext';
 import ModalConfirmacion from './ModalConfirmacion';
+import style from '../styles/depositoRetiro.module.css'
 
 const RetiroMoneda = () => {
 
@@ -74,13 +75,13 @@ const RetiroMoneda = () => {
     return (
         <>
             {!retiroStatus ? 
-                (<div className='retiro-moneda-container'>
-                    <div className="retiro-form-container">
-                        <h2 className="deposito-title section-title">¿Cuánto queres retirar?</h2>
-                        <form className="retiro-form" onSubmit={submitRetiro}>
-                            <p className='currencyid'>{currencyId}</p>
+                (<div className={style.container}>
+                    <div className={style.form_container}>
+                        <h2 className={style.title}>¿Cuánto queres retirar?</h2>
+                        <form className={style.form} onSubmit={submitRetiro}>
+                            <p className={style.currencyid}>{currencyId}</p>
                             <input 
-                                className={`input-deposito ${mostrarError ? 'saldo-error' : '' }`}
+                                className={`${style.input} ${mostrarError ? 'saldo-error' : '' }`}
                                 placeholder='0'
                                 type="number"
                                 step="0.00001"
@@ -89,8 +90,8 @@ const RetiroMoneda = () => {
                             />
                             {mostrarError ? <p className='saldo-error'>Saldo insuficiente</p> :
                                 <> 
-                                    <p className='balance-disponible'>Tenes {balance} {currencyId.toUpperCase()} disponible</p>
-                                    <button type='button' onClick={maxRetiro} className='max-swap'>MAX</button>
+                                    <p className={style.disponible}>Tenes {balance} {currencyId.toUpperCase()} disponible</p>
+                                    <button type='button' onClick={maxRetiro} className='btn_max'>MAX</button>
                                 </>
                                 }
                             <div className="btn-form-container">

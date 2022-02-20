@@ -1,8 +1,9 @@
 import React, { useState, useContext } from 'react';
 import ModalConfirmacion from '../components/ModalConfirmacion';
 import { SaldoContext } from '../context/SaldoContext';
+import style from '../styles/cambiar.module.css'
 
-const Convertir = () => {
+const Cambiar = () => {
 
     const {
         saldo,
@@ -64,7 +65,7 @@ const Convertir = () => {
                         saldo: `+${balanceSwap2.toFixed(curr.decimals)} ${swap2.toUpperCase()}`,
                         cambio: `-${balanceSwap1.toFixed(currency1[0].decimals)} ${swap1.toUpperCase()}`,
                         img: "https://icongr.am/material/swap-horizontal.svg?size=128&color=614ad9",
-                        style: "entrada-saldo",
+                        style: "entrada_saldo",
                         date: {
                             hour: d.getHours(),
                             minutes: d.getMinutes(),
@@ -141,13 +142,13 @@ const Convertir = () => {
     return (
         <>
             {!swapStatus ? 
-                    <div className="convertir-page">
-                    <div className='swap'>
-                        <div className="swap-container">
-                            <div className="swap-select">
-                                <div className='swap-disponible'>
+                    <div className={style.page}>
+                    <div className={style.swap}>
+                        <div className={style.container}>
+                            <div className={style.select}>
+                                <div className={style.disponible}>
                                     <p>Disponible: {currency1[0].balance.toFixed(currency1[0].decimals)} {currency1[0].currency}</p>
-                                    <button onClick={maxSwap} className='max-swap'>MAX</button>
+                                    <button onClick={maxSwap} className='btn_max'>MAX</button>
                                 </div>
                                 <select name="" id="" value={swap1} onChange={handleSwap1}>
                                     {array1.map( curr => {
@@ -158,14 +159,14 @@ const Convertir = () => {
                                 </select>
                             </div>
                             <form onSubmit={submitSwap}>
-                                <input className={`swap-input ${balanceSwap1 > currency1[0].balance ? 'input-error' : ''}`} type="number" onChange={handleChangeSwap1} value={balanceSwap1} />
+                                <input className={`${style.input} ${balanceSwap1 > currency1[0].balance ? 'input-error' : ''}`} type="number" onChange={handleChangeSwap1} value={balanceSwap1} />
                             </form>
                             {balanceSwap1 > currency1[0].balance ?
                                 <p className='saldo-error'>Saldo en {swap1.toUpperCase()} insuficiente</p> : null}
                         </div>
-                        <img onClick={handleClick} src="https://icongr.am/material/swap-vertical.svg?size=30&color=614ad9" className='movimiento-img' alt="" />
-                        <div className="swap-container">
-                            <div className="swap-select">
+                        <img onClick={handleClick} src="https://icongr.am/material/swap-vertical.svg?size=30&color=614ad9" className={style.img} alt="" />
+                        <div className={style.container}>
+                            <div className={style.select}>
                                 <select name="" id="" value={swap2} onChange={handleSwap2}>
                                     {array2.map( curr => {
                                         return (
@@ -175,7 +176,7 @@ const Convertir = () => {
                                 </select>
                             </div>
                             <form onSubmit={submitSwap}>
-                                <input className='swap-input' onChange={handleChangeSwap2} value={balanceSwap2} type="number" />
+                                <input className={style.input} onChange={handleChangeSwap2} value={balanceSwap2} type="number" />
                             </form>
                         </div>
                         <div className="btn-form-container">
@@ -196,4 +197,4 @@ const Convertir = () => {
     );
 };
 
-export default Convertir;
+export default Cambiar;

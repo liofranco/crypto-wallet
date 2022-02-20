@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { SaldoContext } from "../context/SaldoContext";
 import { Link } from 'react-router-dom';
+import style from '../styles/saldos.module.css'
 
 export default function Saldo({currency, cotizacion, route}) {
   const { ocultar } = useContext(SaldoContext);
@@ -8,13 +9,13 @@ export default function Saldo({currency, cotizacion, route}) {
   return (
     <Link
       to={`/${route}/${currency.id}`}
-      className="saldo-container"
+      className={style.saldo_container}
     >
-      <div className="currency-container">
+      <div className={style.currency_container}>
         <img src={currency.img} alt="" className="coin-img" />
         <p>{currency.name}</p>
       </div>
-      <div className="balance-container">
+      <div className={style.balance_container}>
         {!ocultar ? (
           currency.balance > 0 ? (
             <p>

@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Deposito from './pages/Deposito';
 import Home from './pages/Home';
 import Retiro from './pages/Retiro';
-import Convertir from './pages/Convertir';
+import Cambiar from './pages/Cambiar';
 import DepositoMoneda from './components/DepositoMoneda';
 import RetiroMoneda from './components/RetiroMoneda';
 import Saldos from './components/Saldos';
@@ -35,7 +35,7 @@ function App() {
                   <HeaderMobile />
                 <Routes>
                   <Route exact path="/" element={<Home />} />
-                  <Route exact path="/convertir" element={<Convertir />}
+                  <Route exact path="/convertir" element={<Cambiar />}
                   />
                   <Route exact path="/deposito" element={<Deposito />} /> 
                   <Route exact path="/deposito/:currencyId" element={<DepositoMoneda />} />

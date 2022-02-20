@@ -1,4 +1,5 @@
 import React from "react";
+import style from '../styles/movimientos.module.css'
 
 const ModalMovimiento = ({movimiento, setMovimientosDetalles, movimientoDetalles}) => {
 
@@ -9,19 +10,19 @@ const ModalMovimiento = ({movimiento, setMovimientosDetalles, movimientoDetalles
     }
 
   return (
-    <div className="modal-container">
-      <div className={`mov-detalles ${movimientoDetalles ? `visible` : ""}`}>
-        <button className="close-modal" onClick={closeModal}>
+    <div className={style.modal_container}>
+      <div className={`${style.modal_detalles} ${movimientoDetalles ? `visible` : ""}`}>
+        <button className={style.close_modal} onClick={closeModal}>
           X
         </button>
-        <h4 className="mov-name">{movimiento.nombre}</h4>
-        <h2 className={`mov-saldo ${movimiento.style}`}>{movimiento.saldo}</h2>
+        <h4 className={style.modal_name}>{movimiento.nombre}</h4>
+        <h2 className={`${style.modal_saldo} ${movimiento.style}`}>{movimiento.saldo}</h2>
         <h4>{movimiento.cambio || null}</h4>
-        <div className="mov-info">
+        <div className={style.modal_info}>
           <p>Estado</p>
-          <p className="entrada-saldo">Aprobado</p>
+          <p className='entrada_saldo'>Aprobado</p>
         </div>
-        <div className="mov-info">
+        <div className={style.mov_info}>
           <p>Fecha</p>
           <p>
             {day}/{month}/{year} - {hour}:{minutes}

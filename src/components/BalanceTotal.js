@@ -1,5 +1,6 @@
 import React, { useContext} from 'react';
 import { SaldoContext } from '../context/SaldoContext';
+import style from '../styles/balanceTotal.module.css'
 
 const BalanceTotal = () => {
 
@@ -12,11 +13,11 @@ const BalanceTotal = () => {
     }
 
     return (
-        <div className="header-container flex-center">
-            <div className="flex-center header">
+        <div className={style.balancetotal_container}>
+            <div className={style.balancetotal}>
                 <p>Saldo total</p>
                 {cotizaciones.length > 0 ? 
-                    <div className="saldo">
+                    <div className={style.saldototal}>
                     <p>{!ocultar ? saldoTotal : '****'} ARS</p>
                     <img onClick={ocultarSaldo} src="https://icongr.am/material/eye.svg?size=25&color=614ad9" alt="" />
                     </div> : 

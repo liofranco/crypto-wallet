@@ -1,6 +1,8 @@
 import React, { useContext} from 'react';
 import { SaldoContext } from '../context/SaldoContext';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import style from '../styles/navbarTop.module.css'
+
 
 const NavbarTop = ({currency}) => {
 
@@ -19,24 +21,18 @@ const NavbarTop = ({currency}) => {
     }
 
     return (
-        <nav className="flex-center navbar-top-container">
-            <ul className="flex-center navbar-top">
-                <Link to={currency ? `/deposito/${currency[0].id}` : `/deposito`} className="link-navbar-top">
-                    <div className="icon-navtop flex-center">
-                        <img src="https://icongr.am/material/arrow-down.svg?size=128&color=614ad9" alt=""/>
-                    </div>
+        <nav className={style.navbar_top_container}>
+            <ul className={style.navbar_top}>
+                <Link to={currency ? `/deposito/${currency[0].id}` : `/deposito`} className={style.link_navbar_top}>
+                    <img className={style.icon_navtop} src="https://icongr.am/material/arrow-down.svg?size=128&color=614ad9" alt=""/>
                     <h3>Depositar</h3>                    
                 </Link>
-                <Link to="/convertir" className="link-navbar-top" onClick={setSwap}>
-                    <div className="icon-navtop flex-center">
-                        <img src="https://icongr.am/material/swap-horizontal.svg?size=128&color=614ad9" alt=""/>
-                    </div>
+                <Link to="/convertir" className={style.link_navbar_top} onClick={setSwap}>
+                    <img className={style.icon_navtop} src="https://icongr.am/material/swap-horizontal.svg?size=128&color=614ad9" alt=""/>
                     <h3>Cambiar</h3>    
                 </Link>
-                <Link to={currency ? `/retiro/${currency[0].id}`: `/retiro`} className="link-navbar-top">
-                    <div className="icon-navtop flex-center">
-                        <img src="https://icongr.am/material/arrow-up.svg?size=128&color=614ad9" alt=""/>
-                    </div>
+                <Link to={currency ? `/retiro/${currency[0].id}`: `/retiro`} className={style.link_navbar_top}>
+                    <img className={style.icon_navtop} src="https://icongr.am/material/arrow-up.svg?size=128&color=614ad9" alt=""/>
                     <h3>Retirar</h3>                    
                 </Link>
             </ul>
