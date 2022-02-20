@@ -26,7 +26,10 @@ function App() {
       <SaldoProvider>
           <main className='main-container'>
             {userStorage === '' ? (
-              <Login setUserStorage={setUserStorage} />
+                  <Login 
+                    setUserStorage={setUserStorage}
+                    userStorage={userStorage}
+                  />
             ) :
             (
               <Router>

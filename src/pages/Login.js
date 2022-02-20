@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import style from '../styles/login.module.css'
 
-const Login = ({setUserStorage}) => {
+const Login = ({setUserStorage, userStorage}) => {
 
     const [user, setUser] = useState('')
 
@@ -14,7 +15,7 @@ const Login = ({setUserStorage}) => {
     }
 
     return (
-        <div className='login-page'>
+        <div className={style.page}>
             <h1>Bienvenido</h1>
             <h4>Ingrese su nombre para iniciar sesión</h4>
             <form onSubmit={submitLogin}>

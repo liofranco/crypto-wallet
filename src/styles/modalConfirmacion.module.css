@@ -33,7 +33,11 @@
 }
 
 @media (max-width: 540px){
-  .success-container{
+  .container{
+    justify-content: start;
+  }
+  .success_container{
+    margin-top: 25px;
     width: 80%;
     min-height: 300px;
   }

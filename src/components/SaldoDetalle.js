@@ -12,6 +12,8 @@ const SaldoDetalle = () => {
     const cotizacion = cotizaciones.filter((curr) => curr.id === saldoId);
 
     return (
+      <>
+      {cotizaciones.length > 0 ? (
         <div className={style.page}>
           <div className={style.currency_container}>
             <img src={currency[0].img} alt="" className="coin-img" />
@@ -33,6 +35,8 @@ const SaldoDetalle = () => {
                 <Cotizacion cotizacion={cotizacion} /> : null
           }  
         </div>
+      ) : null}
+      </>
       );
 };
 

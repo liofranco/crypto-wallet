@@ -78,3 +78,13 @@
   transform: rotate(180deg);
   background-color: var(--violeta-claro);
 }
+
+@media (max-width: 540px){
+  .page{
+    align-items: flex-start;
+  }
+
+  .swap{
+    margin-top: 25px;
+  }
+}

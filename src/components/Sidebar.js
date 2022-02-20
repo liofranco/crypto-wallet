@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom'
 import { MenuContext } from '../context/MenuContext';
+import { SaldoContext } from '../context/SaldoContext';
 import style from '../styles/sidebar.module.css'
 
 const Sidebar = ({userStorage, setUserStorage}) => {
 
     const {menu, setMenu} = useContext(MenuContext)
+    const {setMovimientosArray, saldo, setSaldo, setSaldoTotal} = useContext(SaldoContext)
 
     const handleMenu = () => {
         if(menu){
@@ -15,6 +17,12 @@ const Sidebar = ({userStorage, setUserStorage}) => {
 
     const logOutUser = () => {
         setUserStorage('')
+        setMovimientosArray([])
+        setSaldoTotal(0)
+        saldo.forEach( curr => {
+            curr.balance = 0
+        })
+        setSaldo(saldo)
     }
     
 
