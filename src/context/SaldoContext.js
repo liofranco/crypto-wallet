@@ -1,10 +1,11 @@
 import React, { createContext, useState, useEffect } from 'react'
+import { useLocalStorage } from '../hooks/useLocalStorage'
 
 export const SaldoContext = createContext()
 
 const SaldoProvider = (props) => {
 
-    const [saldo, setSaldo] = useState([
+    const [saldo, setSaldo] = useLocalStorage('saldos', [
         {
           currency: 'ARS',
           id: 'ars',
@@ -52,10 +53,10 @@ const SaldoProvider = (props) => {
         }
       ])
     
-    const [saldoTotal, setSaldoTotal] = useState(0)
+    const [saldoTotal, setSaldoTotal] = useLocalStorage('saldoTotal', 0)
     const [saldoUpdate, setSaldoUpdate] = useState(false)
-    const [ocultar, setOcultar] = useState(false)
-    const [movimientosArray, setMovimientosArray] = useState([])
+    const [ocultar, setOcultar] = useLocalStorage('ocultar', false)
+    const [movimientosArray, setMovimientosArray] = useLocalStorage('movimientos', [])
     const [cotizaciones, setCotizaciones] = useState([])
     const [swap1, setSwap1] = useState('ars')
     const [swap2, setSwap2] = useState('btc')

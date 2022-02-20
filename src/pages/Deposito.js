@@ -8,6 +8,7 @@ const Deposito = () => {
     const {saldo, cotizaciones} = useContext(SaldoContext)
 
     return (
+        <>
         <div className="retiro-container section-container">
             <h2 className="retiro-title section-title">¿ Que queres depositar ?</h2>
             <div className="flex-center saldos-container">
@@ -23,6 +24,7 @@ const Deposito = () => {
                 })}
             </div>
         </div>
+        </>
     );
 };
 

@@ -10,14 +10,29 @@ import RetiroMoneda from './components/RetiroMoneda';
 import Saldos from './components/Saldos';
 import SaldoProvider from './context/SaldoContext';
 import SaldoDetalle from './components/SaldoDetalle';
+import Sidebar from './components/Sidebar';
+import HeaderMobile from './components/HeaderMobile';
+import MenuProvider from './context/MenuContext';
+import Movimientos from './components/Movimientos';
+import Login from './pages/Login';
+import { useLocalStorage } from './hooks/useLocalStorage';
 
 function App() {
 
+  const [userStorage, setUserStorage] = useLocalStorage('username', '')
+
   return (
+      <MenuProvider>
       <SaldoProvider>
           <main className='main-container'>
-            <div className="main">
+            {userStorage === '' ? (
+              <Login setUserStorage={setUserStorage} />
+            ) :
+            (
               <Router>
+              <Sidebar userStorage={userStorage} setUserStorage={setUserStorage} />
+                <div className="main">
+                  <HeaderMobile />
                 <Routes>
                   <Route exact path="/" element={<Home />} />
                   <Route exact path="/convertir" element={<Convertir />}
@@ -29,11 +44,15 @@ function App() {
                   <Route exact path="/saldos" element={<Saldos />
                   } />
                   <Route exact path="/saldos/:saldoId" element={<SaldoDetalle />} />
+                  <Route exact path="/movimientos" element={<Movimientos />}/>
                 </Routes>
+                </div>
               </Router>
-            </div>
+            ) 
+            }
           </main>
       </SaldoProvider>
+      </MenuProvider>
   );
 }
 
