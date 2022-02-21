@@ -112,8 +112,8 @@
 }
 
 .saldo-error{
-  color: #f04449;
-  font-weight: 600;
+  color: #f04449 !important;
+  font-weight: 600 !important;
 }
 
 
