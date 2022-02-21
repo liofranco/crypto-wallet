@@ -23,6 +23,7 @@ const Sidebar = ({userStorage, setUserStorage}) => {
             curr.balance = 0
         })
         setSaldo(saldo)
+        handleMenu()
     }
     
 
