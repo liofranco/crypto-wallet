@@ -125,12 +125,14 @@
     text-align: center;
   }
   
-  .modal_info{
-    margin-top: 15px;
+  .modal_info,
+  .mov_info{
+    margin-top: 15px; 
     width: 80%;
     display: flex;
     justify-content: space-between;
   }
+
 
 @media (max-width: 540px) {
   .nombre {
