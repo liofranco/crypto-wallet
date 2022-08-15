@@ -81,8 +81,11 @@ const SaldoProvider = (props) => {
         const resultadoApi = await respuesta.json()
         let dai = {
           id: 'dai',
+          name: 'DAI',
+          currency: 'DAI',
           bid: resultadoApi.bid,
-          ask: resultadoApi.ask
+          ask: resultadoApi.ask,
+          img: '/img/dai.png'
         }
   
         const url2 = 'https://criptoya.com/api/belo/btc/ars/0.5'
@@ -90,8 +93,11 @@ const SaldoProvider = (props) => {
         const resultadoApi2 = await respuesta2.json()
         let btc = {
           id: 'btc',
+          name: 'Bitcoin',
+          currency: 'BTC',
           bid: resultadoApi2.bid,
-          ask: resultadoApi2.ask
+          ask: resultadoApi2.ask,
+          img: '/img/btc.png'
         }
   
         const url3 = 'https://criptoya.com/api/belo/eth/ars/0.5'
@@ -99,8 +105,11 @@ const SaldoProvider = (props) => {
         const resultadoApi3 = await respuesta3.json()
         let eth = {
           id: 'eth',
+          name: 'Ethereum',
+          currency: 'ETH',
           bid: resultadoApi3.bid,
-          ask: resultadoApi3.ask
+          ask: resultadoApi3.ask,
+          img: '/img/eth.png'
         }
   
         const url4 = 'https://criptoya.com/api/belo/usdt/ars/0.5'
@@ -108,8 +117,11 @@ const SaldoProvider = (props) => {
         const resultadoApi4 = await respuesta4.json()
         let usdt = {
           id: 'usdt',
+          name: 'Tether',
+          currency: 'USDT',
           bid: resultadoApi4.bid,
-          ask: resultadoApi4.ask
+          ask: resultadoApi4.ask,
+          img: '/img/usdt.png'
         }
   
         let ars = {

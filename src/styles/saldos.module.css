@@ -47,23 +47,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  .currency_container p{
-    font-weight: 600;
-    font-size: 18px;
-    margin-left: 5px;
-  }
-  
-  .balance_container{
-    text-align: center;
-    margin-top: 15px;
-  }
-  
-  .balance_container p:first-child{
-    font-size: 22px;
-    font-weight: bold;
-  }
+}
+
+.currency_container p{
+  font-weight: 600;
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+.balance_container{
+  text-align: center;
+  margin-top: 15px;
+}
+
+.balance_container p:first-child{
+  font-size: 22px;
+  font-weight: bold;
+}
 
 @media (max-width: 540px) {
   .saldos_container {

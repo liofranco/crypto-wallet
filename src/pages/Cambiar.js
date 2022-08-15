@@ -74,35 +74,7 @@ const Cambiar = () => {
                             year: d.getFullYear(), 
                         }
                     })
-
-                    /* movimientosArray.unshift({
-                        nombre: `Cambiaste ${swap1.toUpperCase()}`,
-                        saldo: `-${balanceSwap1.toFixed(currency1[0].decimals)} ${swap1.toUpperCase()}`,
-                        img: "https://icongr.am/material/swap-horizontal.svg?size=128&color=614ad9",
-                        style: "",
-                        date: {
-                            hour: d.getHours(),
-                            minutes: d.getMinutes(),
-                            day: d.getDate(),
-                            month: d.getMonth()+1,
-                            year: d.getFullYear(), 
-                        }
-                    })
-                    movimientosArray.unshift({
-                        nombre: `Recibiste ${swap2.toUpperCase()}`,
-                        saldo: `+${balanceSwap2.toFixed(curr.decimals)} ${swap2.toUpperCase()}`,
-                        img: "https://icongr.am/material/swap-horizontal.svg?size=128&color=614ad9",
-                        style: "entrada-saldo",
-                        date: {
-                            hour: d.getHours(),
-                            minutes: d.getMinutes(),
-                            day: d.getDate(),
-                            month: d.getMonth()+1,
-                            year: d.getFullYear(), 
-                        }
-                    }) */
                 }
-    
     
                 setMovimientosArray(movimientosArray)
                 setSaldo(saldo)
@@ -142,7 +114,8 @@ const Cambiar = () => {
     return (
         <>
             {!swapStatus ? 
-                    <div className={style.page}>
+                <div className={style.page}>
+                    <h2 className="section-title">Cambiar</h2>
                     <div className={style.swap}>
                         <div className={style.container}>
                             <div className={style.select}>

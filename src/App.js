@@ -16,6 +16,7 @@ import MenuProvider from './context/MenuContext';
 import Movimientos from './components/Movimientos';
 import Login from './pages/Login';
 import { useLocalStorage } from './hooks/useLocalStorage';
+import Cotizaciones from './pages/Cotizaciones';
 
 function App() {
 
@@ -48,6 +49,7 @@ function App() {
                   } />
                   <Route exact path="/saldos/:saldoId" element={<SaldoDetalle />} />
                   <Route exact path="/movimientos" element={<Movimientos />}/>
+                  <Route exact path="/cotizaciones" element={<Cotizaciones />}/>
                 </Routes>
                 </div>
               </Router>

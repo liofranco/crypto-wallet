@@ -31,11 +31,6 @@
   margin-left: 300px;
 }
 
-.active{
-  background-color: var(--violeta-claro);
-  color: var(--violeta);
-}
-
 .balance-ars{
   font-size: 15px;
   color: #777;

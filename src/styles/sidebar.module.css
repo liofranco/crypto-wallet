@@ -20,17 +20,29 @@
   width: 100%;
 }
 
+.icon{
+  width: 20px;
+  height: 20px;
+}
+
 .link {
   text-decoration: none;
-  color: #222;
+  color: #777;
   padding: 8px;
   border-radius: 5px;
   width: 90%;
   display: flex;
   align-items: center;
-  margin: 2px 0px;
+  gap: 10px;
+  margin: 4px 0px;
   cursor: pointer;
   transition: all 0.5s;
+}
+
+.link_active{
+  color: #222;
+  font-weight: bold;
+  background-color: rgba(97, 74, 217, 0.2);
 }
 
 .link:hover {

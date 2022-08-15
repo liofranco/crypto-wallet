@@ -15,7 +15,7 @@ const HeaderMobile = () => {
     return (
         <header className={style.container}>
             <div className={style.header}>
-                <h1>Crypto</h1>
+                <h1>CryptoLF</h1>
                 <img onClick={handleMenu} src="https://icongr.am/fontawesome/navicon.svg?size=30&color=222222" alt="" />
             </div>
         </header>
