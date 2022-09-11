@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import style from '../styles/login.module.css'
 
-const Login = ({setUserStorage, userStorage}) => {
+const Login = ({setUserStorage}) => {
 
     const [user, setUser] = useState('')
 
@@ -20,7 +20,7 @@ const Login = ({setUserStorage, userStorage}) => {
                 <h1>CryptoLF</h1>
                 <h3>Ingresá tu nombre</h3>
                 <form onSubmit={submitLogin}>
-                    <input onChange={handleInput} type="text" name="user" id="user" placeholder='Tu nombre'/>
+                    <input onChange={handleInput} type="text" name="user" id="user" />
                     <button className='btn-confirmar' type="submit">Confirmar</button>
                 </form>
             </div>

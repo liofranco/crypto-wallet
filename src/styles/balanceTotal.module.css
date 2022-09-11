@@ -17,13 +17,13 @@
 }
 
 .balancetotal p {
-  color: var(--violeta);
+  color: #eaecef;
   font-size: 18px;
   font-weight: 600;
 }
 
 .saldototal {
-  color: var(--violeta);
+  color: #eaecef;
   display: flex;
   align-items: center;
 }

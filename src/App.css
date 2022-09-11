@@ -9,13 +9,13 @@
 }
 
 :root{
-  --violeta: rgb(97, 74, 217);
-  --violeta-claro: rgba(97, 74, 217, 0.2)
+  --color1: #fcd535;
+  --color2: #3c2601;
 }
 
 #root{
   overflow-x: hidden;
-  background-color: #eee;
+  background-color: #181A20;
   min-height: 100vh;
 }
 
@@ -48,6 +48,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+  color: #eaecef;
 }
 
 .section-title{
@@ -58,10 +59,11 @@
 .btn_max {
   padding: 7px;
   border-radius: 10px;
-  border: 1px solid var(--violeta);
+  border: 1px solid var(--color1);
   text-align: center;
-  color: var(--violeta);
+  color: var(--color1);
   cursor: pointer;
+  background-color: #0b0e11;
 }
 
 .btn-form-container{
@@ -75,22 +77,21 @@
   cursor: pointer;
   border: none;
   margin: 5px;
-  background-color: var(--violeta);
+  background-color: var(--color1);
   padding: 10px 20px;
   border-radius: 5px;
-  color: #fff;
+  color: #0b0e11;
   font-size: 15px;
   text-decoration: none;
-  border: 1px solid var(--violeta);
 }
 
 .btn-cancelar{
-  border: 1px solid var(--violeta);
+  border: none;
   margin: 5px;
-  background-color: #fff;
+  background-color: #474d57;
   padding: 10px 20px;
   border-radius: 5px;
-  color: var(--violeta);
+  color: #eaecef;
   font-size: 15px;
   text-decoration: none;
   cursor: pointer;
@@ -98,10 +99,10 @@
 
 .btn-volver-inicio{
   margin-top: 15px;
-  background-color: #fff;
+  background-color: var(--color1);
+  color: #0b0e11;
   padding: 10px 15px;
   border-radius: 5px;
-  color: var(--violeta);
   font-size: 12px;
   text-decoration: none;
 }
@@ -134,7 +135,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: var(--violeta);
+  background-color: var(--color1);
   animation: dots 0.6s ease-in-out infinite alternate;
 }
 

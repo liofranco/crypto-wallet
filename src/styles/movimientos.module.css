@@ -5,12 +5,13 @@
   flex-direction: column;
   width: 100%;
   margin-top: 25px;
-  background-color: #fff;
+  background-color: #0b0e11;
   border-radius: 10px;
   max-width: 1000px;
   width: 95%;
   padding: 15px 0px;
   margin-bottom: 20px;
+  color: #eaecef;
 }
 
 .container {
@@ -21,8 +22,8 @@
   width: 100%;
   flex-direction: column;
   margin-top: 10px;
-  background-color: #fff;
-  border-top: 1px solid #ccc;
+  background-color: #0b0e11;
+  border-top: 1px solid #444;
 }
 
 .section h3 {
@@ -43,13 +44,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #eaecef;
+}
+
+.info h4{
+  font-weight: normal;
 }
 
 .img {
   width: 20px;
   height: 20px;
   padding: 7px;
-  background-color: var(--violeta-claro);
+  background-color: var(--color1);
   border-radius: 50%;
   margin-right: 10px;
 }
@@ -75,18 +81,18 @@
 .saldo {
   font-size: 20px;
   font-weight: 600;
-  color: #444;
+  color: #848e9c;
 }
 
 .cambio {
-  color: #222;
+  color: #848e9c;
 }
 
 .modal_detalles{
     width: 100%;
     max-width: 300px;
     height: 250px;
-    background-color: #fff;
+    background-color: #1e2329;
     border-radius: 10px;
     padding: 15px;
     transition: all 2s;
@@ -111,9 +117,10 @@
     align-self: flex-end;
     padding: 5px;
     border: none;
-    background-color: #fff;
+    background-color: transparent;
     font-size: 20px;
     cursor: pointer;
+    color: #eaecef;
   }
 
   .modal_name{

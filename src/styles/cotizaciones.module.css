@@ -12,9 +12,9 @@
     min-width: 150px;
     height: 50px;
     border-radius: 10px;
-    background-color: #fff;
+    background-color: #0b0e11;
     text-decoration: none;
-    color: #222;
+    color: #eaecef;
     display: grid;
     grid-template-columns: 50px 1fr 150px;
     align-items: center;
@@ -24,7 +24,7 @@
 }
 
 .coin:hover{
-    border-color: var(--violeta);
+    border-color: var(--color1);
 }
 
 .coin_info{

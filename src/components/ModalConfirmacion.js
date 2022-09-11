@@ -15,7 +15,7 @@ const ModalConfirmacion = ({operacion, cantidad, currency}) => {
             <div className={style.success_container}>
                 {!loader ? (
                     <>
-                    <img className={style.img} src="https://icongr.am/material/check-circle.svg?size=80&color=ffffff" alt="" />
+                    <img className={style.img} src="https://icongr.am/material/check-circle.svg?size=80&color=fcd535" alt="" />
                     <h3>Operación confirmada</h3>
                     <p>Tu {operacion} por {cantidad} {currency.toUpperCase()} fue realizado con exito</p>
                     <Link to="/" className='btn-volver-inicio'>

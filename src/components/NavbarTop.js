@@ -24,15 +24,15 @@ const NavbarTop = ({currency}) => {
         <nav className={style.navbar_top_container}>
             <ul className={style.navbar_top}>
                 <Link to={currency ? `/deposito/${currency[0].id}` : `/deposito`} className={style.link_navbar_top}>
-                    <img className={style.icon_navtop} src="https://icongr.am/material/arrow-down.svg?size=128&color=614ad9" alt=""/>
+                    <img className={style.icon_navtop} src="https://icongr.am/material/arrow-down.svg?size=128&color=999999" alt=""/>
                     <h3>Depositar</h3>                    
                 </Link>
                 <Link to="/convertir" className={style.link_navbar_top} onClick={setSwap}>
-                    <img className={style.icon_navtop} src="https://icongr.am/material/swap-horizontal.svg?size=128&color=614ad9" alt=""/>
+                    <img className={style.icon_navtop} src="https://icongr.am/material/swap-horizontal.svg?size=128&color=999999" alt=""/>
                     <h3>Cambiar</h3>    
                 </Link>
                 <Link to={currency ? `/retiro/${currency[0].id}`: `/retiro`} className={style.link_navbar_top}>
-                    <img className={style.icon_navtop} src="https://icongr.am/material/arrow-up.svg?size=128&color=614ad9" alt=""/>
+                    <img className={style.icon_navtop} src="https://icongr.am/material/arrow-up.svg?size=128&color=999999" alt=""/>
                     <h3>Retirar</h3>                    
                 </Link>
             </ul>

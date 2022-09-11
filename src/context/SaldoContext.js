@@ -13,7 +13,7 @@ const SaldoProvider = (props) => {
           balance: 0,
           decimals: 2,
           symbol: '$',
-          img: 'https://icongr.am/fontawesome/dollar.svg?size=148&color=currentColor'
+          img: 'https://icongr.am/fontawesome/dollar.svg?size=148&color=eaecef'
         },
         {
           currency: 'BTC',

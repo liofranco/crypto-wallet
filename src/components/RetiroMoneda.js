@@ -38,7 +38,7 @@ const RetiroMoneda = () => {
                         movimientosArray.unshift({
                             nombre: `Retiro`,
                             saldo: `-${retiro.toFixed(curr.decimals)} ${currencyId.toUpperCase()}`,
-                            img: "https://icongr.am/material/arrow-up.svg?size=128&color=614ad9",
+                            img: "https://icongr.am/material/arrow-up.svg?size=128&color=0b0e11",
                             style: "",
                             date: {
                                 hour: d.getHours(),

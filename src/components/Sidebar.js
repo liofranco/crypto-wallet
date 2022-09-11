@@ -34,7 +34,7 @@ const Sidebar = ({userStorage, setUserStorage}) => {
         <aside>
             <div className={`${style.sidebar} ${menu ? style.visible : ''}`}>
                 <div className={style.user_info}>
-                    <img src="https://icongr.am/material/account-circle.svg?size=35&color=222222" alt="" />
+                    <img src="https://icongr.am/material/account-circle.svg?size=35&color=848e9c" alt="" />
                     <h4>Hola, <span>{userStorage}</span> 👋</h4>
                 </div>
                 <ul>

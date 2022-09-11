@@ -64,7 +64,7 @@ const Cambiar = () => {
                         nombre: `Cambio ${swap1.toUpperCase()}→${swap2.toUpperCase()}`,
                         saldo: `+${balanceSwap2.toFixed(curr.decimals)} ${swap2.toUpperCase()}`,
                         cambio: `-${balanceSwap1.toFixed(currency1[0].decimals)} ${swap1.toUpperCase()}`,
-                        img: "https://icongr.am/material/swap-horizontal.svg?size=128&color=614ad9",
+                        img: "https://icongr.am/material/swap-horizontal.svg?size=128&color=0b0e11",
                         style: "entrada_saldo",
                         date: {
                             hour: d.getHours(),
@@ -137,7 +137,7 @@ const Cambiar = () => {
                             {balanceSwap1 > currency1[0].balance ?
                                 <p className='saldo-error'>Saldo en {swap1.toUpperCase()} insuficiente</p> : null}
                         </div>
-                        <img onClick={handleClick} src="https://icongr.am/material/swap-vertical.svg?size=30&color=614ad9" className={style.img} alt="" />
+                        <img onClick={handleClick} src="https://icongr.am/material/swap-vertical.svg?size=30&color=eaecef" className={style.img} alt="" />
                         <div className={style.container}>
                             <div className={style.select}>
                                 <select name="" id="" value={swap2} onChange={handleSwap2}>

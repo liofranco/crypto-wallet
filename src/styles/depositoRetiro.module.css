@@ -5,10 +5,11 @@
   align-items: center;
   margin-top: 50px;
   flex-direction: column;
+  color: #eaecef;
 }
 
 .form_container {
-  background-color: #fff;
+  background-color: #0b0e11;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -41,7 +42,7 @@
 }
 
 .currencyid {
-  color: #222;
+  color: #eaecef;
   font-weight: 500;
   text-transform: uppercase;
   font-size: 25px;
@@ -51,7 +52,7 @@
   font-size: 50px;
   border: none;
   background-color: transparent;
-  color: #222;
+  color: #eaecef;
   -webkit-appearance: none;
   -moz-appearance: textfield;
   text-align: center;
@@ -62,7 +63,7 @@
 }
 
 .input::placeholder {
-  color: #222;
+  color: #848e9c;
   opacity: 1;
 }
 

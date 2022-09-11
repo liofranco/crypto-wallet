@@ -1,12 +1,17 @@
 .sidebar {
   width: 250px;
   height: 100vh;
-  background-color: #fff;
+  background-color: #0b0e11;
+  color: #848e9c;
   position: fixed;
   padding-left: 25px;
   top: 0;
   z-index: 600;
   transition: all 0.5s;
+}
+
+.sidebar h4{
+  color: #eaecef;
 }
 
 .sidebar h4 span {
@@ -27,7 +32,7 @@
 
 .link {
   text-decoration: none;
-  color: #777;
+  color: #848e9c;
   padding: 8px;
   border-radius: 5px;
   width: 90%;
@@ -39,14 +44,21 @@
   transition: all 0.5s;
 }
 
-.link_active{
-  color: #222;
-  font-weight: bold;
-  background-color: rgba(97, 74, 217, 0.2);
+.link:hover {
+  background-color: #181a20;
+  color: #eaecef;
 }
 
-.link:hover {
-  background-color: #eee;
+.link_active{
+  color: #0b0e11;
+  font-weight: bold;
+  background-color: #fcd535;
+  z-index: 10;
+}
+
+.link_active:hover{
+  background-color: #fcd535;
+  color: #0b0e11;
 }
 
 

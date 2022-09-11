@@ -37,7 +37,7 @@ const DepositoMoneda = () => {
             movimientosArray.unshift({
                 nombre: `Deposito`,
                 saldo: `+${deposito.toFixed(currency[0].decimals)} ${currencyId.toUpperCase()}`,
-                img: "https://icongr.am/material/arrow-down.svg?size=128&color=614ad9",
+                img: "https://icongr.am/material/arrow-down.svg?size=128&color=0b0e11",
                 style: "entrada_saldo",
                 date: {
                     hour: d.getHours(),

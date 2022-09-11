@@ -5,6 +5,7 @@
   max-width: 1000px;
   width: 95%;
   margin-top: 15px;
+  color: #eaecef;
 }
 
 .mis_saldos h3 {
@@ -28,9 +29,9 @@
   height: 120px;
   margin: 5px;
   border-radius: 10px;
-  background-color: #fff;
+  background-color: #0b0e11;
   text-decoration: none;
-  color: #222;
+  color: #eaecef;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,7 +41,7 @@
 }
 
 .saldo_container:hover {
-  border-color: var(--violeta);
+  border-color: var(--color1);
 }
 
 .currency_container{
